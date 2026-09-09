@@ -93,30 +93,31 @@ Next.js route handlers đóng vai trò BFF, xử lý authen bằng cookie (`acce
 ## 10. Tổng hợp cấu trúc thư mục
 
 ```
-app/                         # Next.js routes (page + BFF route handlers)
-  api/
-    auth/login/route.ts       # 2.1 login route
-    proxy/[...path]/route.ts  # 2.3 proxy catch-all
-middleware.ts                 # 2.2 refresh-token middleware
-features/
-  <feature>/
+src/
+  app/                         # Next.js routes (page + BFF route handlers)
+    api/
+      auth/login/route.ts       # 2.1 login route
+      proxy/[...path]/route.ts  # 2.3 proxy catch-all
+  middleware.ts                 # 2.2 refresh-token middleware
+  features/
+    <feature>/
+      components/
+      repositories/
+      hooks/
+      types/
+      validations/
+  widgets/
+    <widget-name>/
+  shared/
     components/
-    repositories/
+      atoms/
+      molecules/
+      organisms/
     hooks/
+    libs/                        # wrap external packages (axios, socket, sdk...)
     types/
-    validations/
-widgets/
-  <widget-name>/
-shared/
-  components/
-    atoms/
-    molecules/
-    organisms/
-  hooks/
-  libs/                        # wrap external packages (axios, socket, sdk...)
-  types/
-  utils/
-providers/
+    utils/
+  providers/
 ```
 
 Mọi thay đổi kiến trúc lệch khỏi tài liệu này cần cập nhật lại file này trước, không code lệch rồi để tài liệu lỗi thời.

@@ -1,5 +1,5 @@
 @AGENTS.md
-@CONSTITUTION.md
+@.claude/CONSTITUTION.md
 
 ## graphify
 
