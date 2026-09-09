@@ -79,6 +79,12 @@ Next.js route handlers đóng vai trò BFF, xử lý authen bằng cookie (`acce
 - Component có tương tác data/repository (dù dùng UI atomic bên trong) đặt ở `features/<feature>/components`, không đặt trong `shared/components`.
 - UI base dựng bằng **shadcn** — thêm component qua shadcn CLI, tuỳ biến trong `shared/components/atoms` hoặc `molecules` tương ứng, không fork/copy tay từ nơi khác.
 
+### 8.1 SCSS
+
+- Ưu tiên Tailwind utility class trước. Chỉ dùng SCSS (`*.module.scss`, CSS Modules) khi Tailwind không diễn đạt được (selector phức tạp, keyframes dài, style phụ thuộc lẫn nhau nhiều dòng).
+- File `*.module.scss` đặt cạnh component dùng nó (`Component.tsx` + `Component.module.scss`), import class qua `styles.xxx`, không viết global class ngoài `app/globals.css`.
+- Không định nghĩa lại design token (màu, spacing, radius...) bằng SCSS variable — luôn lấy từ CSS variable đã khai báo ở `app/globals.css` (mục màu) qua `var(--tên-token)`.
+
 ## 9. Widgets — component dùng chung nhiều feature
 
 - Component có tương tác data/repository nhưng được dùng bởi **từ 2 feature trở lên** → đặt ở `widgets/<widget-name>`, không lặp lại trong từng feature.
