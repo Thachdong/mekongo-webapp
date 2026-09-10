@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { cn } from "@/shared-libs/utils";
+import { PAGES } from "@/shared/constants/page.constant";
 
 import styles from "./layout.module.scss";
 
@@ -13,7 +14,7 @@ export default function AuthLayout({ children }: LayoutProps<"/auth">) {
             PLACEHOLDER
           </span>
           <Link
-            href="/"
+            href={PAGES.HOME.pathname}
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             Back to home

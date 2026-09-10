@@ -26,6 +26,7 @@ import {
   type RegisterFormValues,
 } from "@/features/auth/types/register.type";
 import { registerValidationSchema } from "@/features/auth/validations/register.validation";
+import { PAGES } from "@/shared/constants/page.constant";
 
 const PROFILE_TYPE_LABELS: Record<ProfileType, string> = {
   INDIVIDUAL: "Individual",
@@ -250,10 +251,13 @@ export function RegisterForm() {
       </Button>
 
       <div className="flex justify-center gap-4 text-sm text-muted-foreground">
-        <Link href="/auth/login" className="hover:text-foreground">
+        <Link href={PAGES.LOGIN.pathname} className="hover:text-foreground">
           Login
         </Link>
-        <Link href="/auth/reset-password" className="hover:text-foreground">
+        <Link
+          href={PAGES.RESET_PASSWORD.pathname}
+          className="hover:text-foreground"
+        >
           Reset password
         </Link>
       </div>

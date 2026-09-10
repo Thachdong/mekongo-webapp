@@ -8,6 +8,7 @@ import { sessionStorageClient } from "@/shared-libs/storage/session-storage";
 import { authRepository } from "@/features/auth/repositories/auth.repository";
 import type { RegisterPayload } from "@/features/auth/types/register.type";
 import { ACTIVATION_STORAGE_KEY } from "@/features/auth/types/activate.type";
+import { PAGES } from "@/shared/constants/page.constant";
 
 export function useRegister() {
   const router = useRouter();
@@ -19,7 +20,7 @@ export function useRegister() {
         identifier: payload.identifier,
         loginType: payload.loginType,
       });
-      router.push("/auth/activate");
+      router.push(PAGES.ACTIVATE.pathname);
     },
   });
 

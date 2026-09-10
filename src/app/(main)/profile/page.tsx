@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 
+import { PAGES } from "@/shared/constants/page.constant";
+
 export const metadata: Metadata = {
-  title: "Profile",
+  title: PAGES.PROFILE.title,
 };
 
 export default function ProfilePage() {

@@ -14,6 +14,7 @@ import { PasswordInput } from "@/shared-components/molecules/password-input";
 import { useLogin } from "@/features/auth/hooks/use-login";
 import type { LoginFormValues } from "@/features/auth/types/login.type";
 import { loginValidationSchema } from "@/features/auth/validations/login.validation";
+import { PAGES } from "@/shared/constants/page.constant";
 
 const DEFAULT_VALUES: LoginFormValues = {
   loginType: "EMAIL",
@@ -121,15 +122,18 @@ export function LoginForm() {
       </Button>
 
       <div className="flex justify-center gap-4 text-sm text-muted-foreground">
-        <Link href="/auth/register" className="hover:text-foreground">
+        <Link href={PAGES.REGISTER.pathname} className="hover:text-foreground">
           Register
         </Link>
-        <Link href="/auth/reset-password" className="hover:text-foreground">
+        <Link
+          href={PAGES.RESET_PASSWORD.pathname}
+          className="hover:text-foreground"
+        >
           Reset password
         </Link>
         <Link
           ref={activateLinkRef}
-          href="/auth/activate"
+          href={PAGES.ACTIVATE.pathname}
           className="hover:text-foreground focus:underline"
         >
           Activate Account
