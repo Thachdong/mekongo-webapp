@@ -21,8 +21,8 @@ Flags:
 - [ ] @/app/auth/layout.tsx — fixed header (PLACEHOLDER logo + back-to-home link) + centered max-w-1024 scrollable bordered content card, dùng chung mọi page auth
 - [ ] @/app/auth/register/page.tsx — route entry, render RegisterForm
 - [x] @/shared-components/atoms/{button,input,label,select,textarea,toggle}.tsx — shadcn add, primitive còn thiếu trong repo (toggle gộp chung group+item vào 1 file theo yêu cầu, border quanh cả nhóm, active item highlight bg+text)
-- [ ] @/shared-components/molecules/password-input.tsx — Input + eye icon toggle, reusable
-- [ ] @/shared-components/molecules/avatar-file-input.tsx — file picker + preview, optional, reusable
+- [x] @/shared-components/molecules/password-input.tsx — Input + eye icon toggle, reusable
+- [x] @/shared-components/molecules/avatar-file-input.tsx — file picker + preview (circular avatar), optional, reusable, controlled (value/onChange)
 - [ ] @/features/auth/components/register-form.tsx — toggle EMAIL/PHONE, identifier, password, profile type select, displayName, avatar, address (province/ward text + TODO comment cho select), details textarea, error dưới title, bottom links login/reset-password
 - [ ] @/features/auth/validations/register.validation.ts — joi: identifier theo loginType, password strength cơ bản
 
@@ -33,4 +33,4 @@ Flags:
 
 ## 3. Khác
 - [ ] package.json: thêm react-hook-form, joi, @hookform/resolvers (chưa cài, cần cho §7)
-- [x] test/storybook: stories/shared/components/atoms/{button,input,label,select,textarea,toggle}.stories.tsx — theo yêu cầu, cover các atom vừa tạo (bổ sung sau khi report, không nằm trong plan gốc)
+- [x] test/storybook: stories/shared/components/atoms/{button,input,label,select,textarea,toggle}.stories.tsx + stories/shared/components/molecules/{password-input,avatar-file-input}.stories.tsx — theo yêu cầu, cover các component vừa tạo (bổ sung sau khi report, không nằm trong plan gốc)
