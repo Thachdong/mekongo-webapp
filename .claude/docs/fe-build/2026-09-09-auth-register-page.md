@@ -1,6 +1,6 @@
 # Build page auth/register (+ shared auth layout)
 
-Status: in progress
+Status: done
 
 ## Chunk order
 1. shadcn atoms: button, input, label, select, textarea, toggle-group
@@ -18,12 +18,12 @@ Flags:
 - provinceCode: API bắt buộc, không có trong spec UI (province/ward tạm là text field theo TODO của bạn) → gửi placeholder tạm, cần fix khi có select thật.
 
 ## 1. UI
-- [ ] @/app/auth/layout.tsx — fixed header (PLACEHOLDER logo + back-to-home link) + centered max-w-1024 scrollable bordered content card, dùng chung mọi page auth
-- [ ] @/app/auth/register/page.tsx — route entry, render RegisterForm
+- [x] @/app/auth/layout.tsx — fixed header (PLACEHOLDER logo + back-to-home link) + centered max-w-1024 scrollable bordered content card, dùng chung mọi page auth
+- [x] @/app/auth/register/page.tsx — route entry, render RegisterForm
 - [x] @/shared-components/atoms/{button,input,label,select,textarea,toggle}.tsx — shadcn add, primitive còn thiếu trong repo (toggle gộp chung group+item vào 1 file theo yêu cầu, border quanh cả nhóm, active item highlight bg+text)
 - [x] @/shared-components/molecules/password-input.tsx — Input + eye icon toggle, reusable
 - [x] @/shared-components/molecules/avatar-file-input.tsx — file picker + preview (circular avatar), optional, reusable, controlled (value/onChange)
-- [ ] @/features/auth/components/register-form.tsx — toggle EMAIL/PHONE, identifier, password, profile type select, displayName, avatar, address (province/ward text + TODO comment cho select), details textarea, error dưới title, bottom links login/reset-password
+- [x] @/features/auth/components/register-form.tsx — toggle EMAIL/PHONE, identifier, password, profile type select, displayName, avatar, address (province/ward text + TODO comment cho select), details textarea, error dưới title, bottom links login/reset-password (dùng useWatch thay watch() — React Compiler chặn watch() không memo-safe)
 - [x] @/features/auth/validations/register.validation.ts — joi: identifier theo loginType, password strength cơ bản
 
 ## 2. Logic
