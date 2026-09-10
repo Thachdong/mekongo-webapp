@@ -24,13 +24,14 @@ Flags:
 - [x] @/shared-components/molecules/password-input.tsx — Input + eye icon toggle, reusable
 - [x] @/shared-components/molecules/avatar-file-input.tsx — file picker + preview (circular avatar), optional, reusable, controlled (value/onChange)
 - [ ] @/features/auth/components/register-form.tsx — toggle EMAIL/PHONE, identifier, password, profile type select, displayName, avatar, address (province/ward text + TODO comment cho select), details textarea, error dưới title, bottom links login/reset-password
-- [ ] @/features/auth/validations/register.validation.ts — joi: identifier theo loginType, password strength cơ bản
+- [x] @/features/auth/validations/register.validation.ts — joi: identifier theo loginType, password strength cơ bản
 
 ## 2. Logic
-- [ ] @/features/auth/types/register.type.ts — RegisterType, ProfileType, RegisterFormValues, RegisterPayload
-- [ ] @/features/auth/repositories/auth.repository.ts — register(payload) qua axiosClient POST /auth/register (client)
-- [ ] @/features/auth/hooks/use-register.ts — gọi repository, loading/error state, success → router.push("/auth/activate")
+- [x] @/features/auth/types/register.type.ts — RegisterType, ProfileType, RegisterFormValues, RegisterPayload
+- [x] @/features/auth/repositories/auth.repository.ts — register(payload) qua axiosClient POST /auth/register (client), trả về RegisterResponseDto (accountId/otpId/otpExpiredAt, thêm vào register.type.ts)
+- [x] @/features/auth/hooks/use-register.ts — gọi repository, loading/error state, success → router.push("/auth/activate")
+- [x] @/shared-libs/axios/error.ts — getApiErrorMessage(), trích message lỗi từ axios error (400: string[], 500: string); cần thiết vì §6 cấm import thẳng axios ngoài shared/libs (bổ sung phát sinh khi làm hook, không nằm trong plan gốc)
 
 ## 3. Khác
-- [ ] package.json: thêm react-hook-form, joi, @hookform/resolvers (chưa cài, cần cho §7)
+- [x] package.json: thêm react-hook-form@7.87.0, joi@18.2.8, @hookform/resolvers@5.9.1
 - [x] test/storybook: stories/shared/components/atoms/{button,input,label,select,textarea,toggle}.stories.tsx + stories/shared/components/molecules/{password-input,avatar-file-input}.stories.tsx — theo yêu cầu, cover các component vừa tạo (bổ sung sau khi report, không nằm trong plan gốc)
