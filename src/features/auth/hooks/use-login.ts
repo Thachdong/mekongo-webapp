@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 
 import { getApiErrorCode, getApiErrorMessage } from "@/shared-libs/axios/error";
@@ -11,30 +11,20 @@ const ACCOUNT_NOT_ACTIVE_CODE = "ACCOUNT_NOT_ACTIVE";
 
 export function useLogin() {
   const router = useRouter();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [needsActivation, setNeedsActivation] = useState(false);
 
-  const login = useCallback(
-    async (payload: LoginPayload) => {
-      setIsSubmitting(true);
-      setError(null);
-      setNeedsActivation(false);
-
-      try {
-        await authRepository.login(payload);
-        router.push("/");
-      } catch (err) {
-        setError(
-          getApiErrorMessage(err, "Đăng nhập thất bại. Vui lòng thử lại."),
-        );
-        setNeedsActivation(getApiErrorCode(err) === ACCOUNT_NOT_ACTIVE_CODE);
-      } finally {
-        setIsSubmitting(false);
-      }
+  const mutation = useMutation({
+    mutationFn: (payload: LoginPayload) => authRepository.login(payload),
+    onSuccess: () => {
+      router.push("/");
     },
-    [router],
-  );
+  });
 
-  return { login, isSubmitting, error, needsActivation };
+  return {
+    login: mutation.mutate,
+    isSubmitting: mutation.isPending,
+    error: mutation.error
+      ? getApiErrorMessage(mutation.error, "Đăng nhập thất bại. Vui lòng thử lại.")
+      : null,
+    needsActivation: getApiErrorCode(mutation.error) === ACCOUNT_NOT_ACTIVE_CODE,
+  };
 }

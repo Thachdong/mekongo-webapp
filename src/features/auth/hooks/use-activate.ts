@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { getApiErrorMessage } from "@/shared-libs/axios/error";
@@ -11,9 +12,6 @@ const RESEND_COUNTDOWN_SECONDS = 5 * 60;
 
 export function useActivate() {
   const router = useRouter();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isResending, setIsResending] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [secondsLeft, setSecondsLeft] = useState(RESEND_COUNTDOWN_SECONDS);
 
   useEffect(() => {
@@ -23,50 +21,34 @@ export function useActivate() {
     return () => clearInterval(timer);
   }, []);
 
-  const activate = useCallback(
-    async (payload: ActivatePayload) => {
-      setIsSubmitting(true);
-      setError(null);
-
-      try {
-        await authRepository.activate(payload);
-        router.push("/auth/login");
-      } catch (err) {
-        setError(
-          getApiErrorMessage(err, "Kích hoạt thất bại. Vui lòng thử lại."),
-        );
-      } finally {
-        setIsSubmitting(false);
-      }
+  const activateMutation = useMutation({
+    mutationFn: (payload: ActivatePayload) => authRepository.activate(payload),
+    onSuccess: () => {
+      router.push("/auth/login");
     },
-    [router],
-  );
+  });
 
-  const resend = useCallback(async (identifier: string) => {
-    setIsResending(true);
-    setError(null);
-
-    try {
-      await authRepository.resendVerification({
+  const resendMutation = useMutation({
+    mutationFn: (identifier: string) =>
+      authRepository.resendVerification({
         identifier,
         purpose: "ACCOUNT_VERIFICATION",
-      });
+      }),
+    onSuccess: () => {
       setSecondsLeft(RESEND_COUNTDOWN_SECONDS);
-    } catch (err) {
-      setError(
-        getApiErrorMessage(err, "Gửi lại mã thất bại. Vui lòng thử lại."),
-      );
-    } finally {
-      setIsResending(false);
-    }
-  }, []);
+    },
+  });
 
   return {
-    activate,
-    isSubmitting,
-    error,
-    resend,
-    isResending,
+    activate: activateMutation.mutate,
+    isSubmitting: activateMutation.isPending,
+    error: activateMutation.error
+      ? getApiErrorMessage(activateMutation.error, "Kích hoạt thất bại. Vui lòng thử lại.")
+      : resendMutation.error
+        ? getApiErrorMessage(resendMutation.error, "Gửi lại mã thất bại. Vui lòng thử lại.")
+        : null,
+    resend: resendMutation.mutate,
+    isResending: resendMutation.isPending,
     secondsLeft,
     canResend: secondsLeft <= 0,
   };

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 
 import { getApiErrorMessage } from "@/shared-libs/axios/error";
@@ -11,31 +11,23 @@ import { ACTIVATION_STORAGE_KEY } from "@/features/auth/types/activate.type";
 
 export function useRegister() {
   const router = useRouter();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
-  const register = useCallback(
-    async (payload: RegisterPayload) => {
-      setIsSubmitting(true);
-      setError(null);
-
-      try {
-        await authRepository.register(payload);
-        sessionStorageClient.set(ACTIVATION_STORAGE_KEY, {
-          identifier: payload.identifier,
-          loginType: payload.loginType,
-        });
-        router.push("/auth/activate");
-      } catch (err) {
-        setError(
-          getApiErrorMessage(err, "Đăng ký thất bại. Vui lòng thử lại."),
-        );
-      } finally {
-        setIsSubmitting(false);
-      }
+  const mutation = useMutation({
+    mutationFn: (payload: RegisterPayload) => authRepository.register(payload),
+    onSuccess: (_data, payload) => {
+      sessionStorageClient.set(ACTIVATION_STORAGE_KEY, {
+        identifier: payload.identifier,
+        loginType: payload.loginType,
+      });
+      router.push("/auth/activate");
     },
-    [router],
-  );
+  });
 
-  return { register, isSubmitting, error };
+  return {
+    register: mutation.mutate,
+    isSubmitting: mutation.isPending,
+    error: mutation.error
+      ? getApiErrorMessage(mutation.error, "Đăng ký thất bại. Vui lòng thử lại.")
+      : null,
+  };
 }
