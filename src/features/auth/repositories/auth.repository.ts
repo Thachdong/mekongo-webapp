@@ -7,6 +7,10 @@ import type {
   ActivatePayload,
   ResendPayload,
 } from "@/features/auth/types/activate.type";
+import type {
+  LoginPayload,
+  LoginResult,
+} from "@/features/auth/types/login.type";
 
 type ApiEnvelope<T> = {
   data: T;
@@ -14,6 +18,21 @@ type ApiEnvelope<T> = {
 };
 
 export const authRepository = {
+  /**
+   * Hits the dedicated BFF route (not the generic /api/proxy) — the response
+   * sets httpOnly accessToken/refreshToken cookies server-side, which the
+   * generic proxy forward doesn't do. baseURL override bypasses axiosClient's
+   * "/api/proxy" default to reach "/api/auth/login" directly.
+   */
+  login: async (payload: LoginPayload) => {
+    const { data } = await axiosClient.post<LoginResult>(
+      "/api/auth/login",
+      payload,
+      { baseURL: "", skipAuthRedirect: true },
+    );
+    return data;
+  },
+
   register: async (payload: RegisterPayload) => {
     const { data } = await axiosClient.post<ApiEnvelope<RegisterResponseDto>>(
       "/auth/register",

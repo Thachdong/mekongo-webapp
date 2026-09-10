@@ -2,6 +2,7 @@ import axios from "axios";
 
 type ApiErrorBody = {
   message?: string | string[];
+  code?: string;
 };
 
 /**
@@ -17,4 +18,13 @@ export function getApiErrorMessage(error: unknown, fallback: string): string {
   }
 
   return fallback;
+}
+
+/** Extracts the backend's stable error `code` (e.g. "ACCOUNT_NOT_ACTIVE"), when present. */
+export function getApiErrorCode(error: unknown): string | undefined {
+  if (axios.isAxiosError(error)) {
+    const body = error.response?.data as ApiErrorBody | undefined;
+    return body?.code;
+  }
+  return undefined;
 }
