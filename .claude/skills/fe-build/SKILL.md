@@ -13,6 +13,10 @@ Full report required when the task creates ≥1 new file, or touches ≥2 featur
 
 Skip the report (implement directly) when the task is a trivial edit — fix 1-2 existing files, no new file, no new feature. Say so in one line instead of a full report.
 
+## Step 0 — Enter plan mode
+
+Call `EnterPlanMode` before doing anything else (reuse check, exploration, report). This puts the approval gate (Step 6) on the native plan-mode UI — user gets a real Approve / Reject button, and rejecting with feedback text is how they edit the report, instead of typing free-form "approve"/"change X".
+
 ## Step 1 — Reuse check (before planning)
 
 Before listing anything to create, check whether it already exists:
@@ -68,17 +72,47 @@ Output exactly this structure. One line per item: path + short purpose. No code,
 
 Omit section 3 lines that don't apply; drop the whole section if nothing applies.
 
-## Step 5 — Approval gate
+## Step 5 — Save report to file
 
-After the report, stop. Do not write any code until the user explicitly approves or requests changes to the plan. This gate applies even under an auto-approve/auto-mode session default — it's a workflow the user asked for explicitly, so it overrides the general "keep going without asking" bias.
+Write the report to `.claude/docs/fe-build/<YYYY-MM-DD>-<task-slug>.md` (kebab-case slug from the task description). This is the persistent, checkable record — keep it in sync as work progresses (Step 8).
 
-## Step 6 — Break the plan into chunks
+File format:
+
+```markdown
+# <task description>
+
+Status: planned
+
+## 1. UI
+- [ ] @/features/<feature>/components/<Name>.tsx — <mục đích>
+...
+
+## 2. Logic
+- [ ] @/features/<feature>/repositories/<name>.repository.ts — <mục đích>
+...
+
+## 3. Khác
+- [ ] ...
+```
+
+Same content as the chat report, just checklist-formatted and filed. Also write this same report as the plan-mode plan file (the one `ExitPlanMode` reads) — the two files stay identical at this point.
+
+## Step 6 — Approval gate (native plan-mode UI)
+
+Call `ExitPlanMode`. This surfaces the real Approve / Reject control — do not additionally ask in chat "does this look OK?" (that duplicates what ExitPlanMode already does).
+
+- Approved → continue to Step 7. Plan mode ends automatically.
+- Rejected with feedback → revise the report (chat + `.claude/docs/fe-build/...md` + plan file) per the feedback, call `ExitPlanMode` again. Repeat until approved.
+
+This gate applies even under an auto-approve/auto-mode session default — it's a workflow the user asked for explicitly, so it overrides the general "keep going without asking" bias.
+
+## Step 7 — Break the plan into chunks
 
 Once approved, split the report bullets into ordered implementation chunks before writing any code. A chunk is one coherent, reviewable unit — usually one file, or a few files that are inseparable (e.g. a type + its validation schema, or two axios instances created together). Order chunks by dependency (types/schemas before the repository that uses them, repository before the hook, hook before the component that calls it).
 
-State the chunk order briefly (one line per chunk) so the user knows what "next" means.
+State the chunk order briefly (one line per chunk) so the user knows what "next" means. Update the saved report file: set `Status: in progress`.
 
-## Step 7 — Implement one chunk at a time
+## Step 8 — Implement one chunk at a time
 
 Implement exactly one chunk. Apply CONSTITUTION.md rules throughout:
 - repository pattern only, no raw fetch/axios in components (§3)
@@ -87,6 +121,17 @@ Implement exactly one chunk. Apply CONSTITUTION.md rules throughout:
 - UI base via shadcn, customized in `shared/components/atoms|molecules` (§8)
 - Tailwind first; `*.module.scss` only when Tailwind can't express it, colors via `var(--token)` from `app/globals.css` (§8.1)
 
-After the chunk is done: stop. State what changed (files touched, 1 line each) and what the next chunk is. Do not continue to the next chunk in the same turn — wait for the user to review/commit and explicitly ask to continue, even though the overall plan was already approved. Never batch multiple chunks into one turn unless the user asks to.
+After the chunk is done:
+1. Tick off the corresponding checklist item(s) in the saved report file (`- [ ]` → `- [x]`). If this was the last unchecked item, set `Status: done`.
+2. State what changed (files touched, 1 line each) and name the next chunk.
+3. If there are remaining chunks, call `AskUserQuestion` with one question, options (in this order):
+   - "Next chunk" (Recommended) — proceed to the next chunk now
+   - "Stop here" — user will review/commit first, resume later by re-invoking the skill or saying continue
+   - "Edit plan" — user wants to change remaining chunks before continuing
+   If all chunks are done, skip this — just report completion, no question needed.
 
-If implementation reveals the report was wrong (e.g. reuse missed, wrong bucket), pause and flag the deviation instead of silently diverging from the approved plan.
+Never continue to the next chunk without going through this question, even though the overall plan was already approved — each chunk is its own review/commit point. Never batch multiple chunks into one turn.
+
+If "Edit plan" is picked, get the change from the user, update the report file and remaining chunk list, then re-ask via `AskUserQuestion` once the revised plan is ready.
+
+If implementation reveals the report was wrong (e.g. reuse missed, wrong bucket), pause and flag the deviation instead of silently diverging from the approved plan — note the deviation in the report file too.
