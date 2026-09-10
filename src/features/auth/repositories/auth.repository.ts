@@ -11,6 +11,10 @@ import type {
   LoginPayload,
   LoginResult,
 } from "@/features/auth/types/login.type";
+import type {
+  ResetPasswordPayload,
+  ResetPasswordResult,
+} from "@/features/auth/types/reset-password.type";
 
 type ApiEnvelope<T> = {
   data: T;
@@ -52,6 +56,14 @@ export const authRepository = {
   resendVerification: async (payload: ResendPayload) => {
     const { data } = await axiosClient.post<ApiEnvelope<null>>(
       "/verification/re-send",
+      payload,
+    );
+    return data.data;
+  },
+
+  resetPassword: async (payload: ResetPasswordPayload) => {
+    const { data } = await axiosClient.post<ApiEnvelope<ResetPasswordResult>>(
+      "/auth/reset-password",
       payload,
     );
     return data.data;
