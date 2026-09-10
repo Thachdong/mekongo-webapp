@@ -11,6 +11,10 @@ type CodeInputProps = {
   value?: string
   onChange?: (value: string) => void
   onBlur?: () => void
+  /** Focus the first box (e.g. once the surrounding page knows this box should own focus). */
+  autoFocus?: boolean
+  /** Fires once all boxes hold a digit — e.g. move focus to the submit button. */
+  onComplete?: () => void
   disabled?: boolean
   "aria-invalid"?: boolean
   className?: string
@@ -21,12 +25,18 @@ function CodeInput({
   value = "",
   onChange,
   onBlur,
+  autoFocus,
+  onComplete,
   disabled,
   "aria-invalid": ariaInvalid,
   className,
   name,
 }: CodeInputProps) {
   const inputsRef = React.useRef<(HTMLInputElement | null)[]>([])
+
+  React.useEffect(() => {
+    if (autoFocus) inputsRef.current[0]?.focus()
+  }, [autoFocus])
 
   // `value` is kept at a fixed length of CODE_LENGTH internally, padded with
   // " " for empty slots, so a digit typed into an out-of-order box (e.g. box
@@ -50,7 +60,12 @@ function CodeInput({
       const next = [...digits]
       next[index] = char
       onChange?.(toValue(next))
-      if (char) focusBox(index + 1)
+      if (!char) return
+      if (next.every((d) => d !== "")) {
+        onComplete?.()
+      } else {
+        focusBox(index + 1)
+      }
     }
 
   const handleKeyDown =
@@ -72,7 +87,11 @@ function CodeInput({
     if (!pasted) return
     event.preventDefault()
     onChange?.(toValue(pasted.padEnd(CODE_LENGTH, " ").split("")))
-    focusBox(pasted.length)
+    if (pasted.length === CODE_LENGTH) {
+      onComplete?.()
+    } else {
+      focusBox(pasted.length)
+    }
   }
 
   return (

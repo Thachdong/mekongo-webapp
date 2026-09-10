@@ -1,6 +1,17 @@
+import type { RegisterType } from "@/features/auth/types/register.type";
+
 export type ActivateFormValues = {
   identifier: string;
+  loginType: RegisterType;
   code: string;
+};
+
+/** sessionStorage key: hand-off {identifier, loginType} from register → activate without exposing it in the URL. */
+export const ACTIVATION_STORAGE_KEY = "auth:activation";
+
+export type ActivationHandoff = {
+  identifier: string;
+  loginType: RegisterType;
 };
 
 /** Payload for POST /auth/activate (ActivateRequestDto). */
