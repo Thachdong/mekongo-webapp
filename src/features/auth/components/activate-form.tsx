@@ -43,6 +43,7 @@ export function ActivateForm() {
     isResending,
     secondsLeft,
     canResend,
+    startCountdown,
   } = useActivate();
 
   // true once we know the identifier/loginType came from register (readonly
@@ -76,13 +77,16 @@ export function ActivateForm() {
     // an effect so the first client render still matches the SSR markup.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setHasHandoff(true);
-  }, [reset]);
+    // handoff means register already triggered the first code send
+    startCountdown();
+  }, [reset, startCountdown]);
 
   const loginType = useWatch({ control, name: "loginType" });
   const identifier = useWatch({ control, name: "identifier" });
   const identifierField = register("identifier");
 
   const submitValidForm = handleSubmit((values) => {
+    startCountdown();
     void activate({ identifier: values.identifier, code: values.code });
   });
 

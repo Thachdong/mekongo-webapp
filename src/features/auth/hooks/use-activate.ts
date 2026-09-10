@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { getApiErrorMessage } from "@/shared-libs/axios/error";
@@ -13,13 +13,20 @@ const RESEND_COUNTDOWN_SECONDS = 5 * 60;
 
 export function useActivate() {
   const router = useRouter();
-  const [secondsLeft, setSecondsLeft] = useState(RESEND_COUNTDOWN_SECONDS);
+  const [secondsLeft, setSecondsLeft] = useState(0);
+  const [isCounting, setIsCounting] = useState(false);
 
   useEffect(() => {
+    if (!isCounting) return;
     const timer = setInterval(() => {
       setSecondsLeft((s) => (s > 0 ? s - 1 : 0));
     }, 1000);
     return () => clearInterval(timer);
+  }, [isCounting]);
+
+  const startCountdown = useCallback(() => {
+    setSecondsLeft(RESEND_COUNTDOWN_SECONDS);
+    setIsCounting(true);
   }, []);
 
   const activateMutation = useMutation({
@@ -36,12 +43,13 @@ export function useActivate() {
         purpose: "ACCOUNT_VERIFICATION",
       }),
     onSuccess: () => {
-      setSecondsLeft(RESEND_COUNTDOWN_SECONDS);
+      startCountdown();
     },
   });
 
   return {
     activate: activateMutation.mutate,
+    startCountdown,
     isSubmitting: activateMutation.isPending,
     error: activateMutation.error
       ? getApiErrorMessage(activateMutation.error, "Kích hoạt thất bại. Vui lòng thử lại.")
