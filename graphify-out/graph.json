@@ -529,10 +529,54 @@
       "norm_label": "@hookform/resolvers"
     },
     {
-      "label": "axios",
+      "label": "@tanstack/react-query",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L16",
+      "_origin": "ast",
+      "id": "package_dependencies_tanstack_react_query",
+      "community": 4,
+      "community_name": "Runtime Dependencies",
+      "norm_label": "@tanstack/react-query"
+    },
+    {
+      "label": "@tanstack/react-query",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "tanstack_react_query",
+      "community": 4,
+      "community_name": "Runtime Dependencies",
+      "norm_label": "@tanstack/react-query"
+    },
+    {
+      "label": "@tanstack/react-query-devtools",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "package_dependencies_tanstack_react_query_devtools",
+      "community": 4,
+      "community_name": "Runtime Dependencies",
+      "norm_label": "@tanstack/react-query-devtools"
+    },
+    {
+      "label": "@tanstack/react-query-devtools",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "tanstack_react_query_devtools",
+      "community": 4,
+      "community_name": "Runtime Dependencies",
+      "norm_label": "@tanstack/react-query-devtools"
+    },
+    {
+      "label": "axios",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "package_dependencies_axios",
       "community": 4,
@@ -543,7 +587,7 @@
       "label": "axios",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "axios",
       "community": 4,
@@ -554,7 +598,7 @@
       "label": "class-variance-authority",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "package_dependencies_class_variance_authority",
       "community": 4,
@@ -565,7 +609,7 @@
       "label": "class-variance-authority",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "class_variance_authority",
       "community": 4,
@@ -576,7 +620,7 @@
       "label": "cn",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "package_dependencies_cn",
       "community": 4,
@@ -587,7 +631,7 @@
       "label": "cn",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "cn",
       "community": 4,
@@ -598,7 +642,7 @@
       "label": "joi",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "package_dependencies_joi",
       "community": 4,
@@ -609,7 +653,7 @@
       "label": "joi",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "joi",
       "community": 4,
@@ -620,7 +664,7 @@
       "label": "lucide-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "package_dependencies_lucide_react",
       "community": 4,
@@ -631,7 +675,7 @@
       "label": "lucide-react",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "lucide_react",
       "community": 4,
@@ -642,7 +686,7 @@
       "label": "next",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "package_dependencies_next",
       "community": 4,
@@ -653,7 +697,7 @@
       "label": "next",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "next",
       "community": 4,
@@ -664,29 +708,29 @@
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "package_dependencies_react",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "react"
     },
     {
       "label": "react",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "react",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "react"
     },
     {
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "package_dependencies_react_dom",
       "community": 4,
@@ -697,7 +741,7 @@
       "label": "react-dom",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "react_dom",
       "community": 4,
@@ -708,7 +752,7 @@
       "label": "react-hook-form",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "package_dependencies_react_hook_form",
       "community": 4,
@@ -719,7 +763,7 @@
       "label": "react-hook-form",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "react_hook_form",
       "community": 4,
@@ -730,7 +774,7 @@
       "label": "shadcn",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "package_dependencies_shadcn",
       "community": 4,
@@ -741,7 +785,7 @@
       "label": "shadcn",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "shadcn",
       "community": 4,
@@ -752,7 +796,7 @@
       "label": "tw-animate-css",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "package_dependencies_tw_animate_css",
       "community": 4,
@@ -763,7 +807,7 @@
       "label": "tw-animate-css",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "tw_animate_css",
       "community": 4,
@@ -774,7 +818,7 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "package_devdependencies",
       "community": 0,
@@ -785,7 +829,7 @@
       "label": "@chromatic-com/storybook",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "package_devdependencies_chromatic_com_storybook",
       "community": 0,
@@ -796,7 +840,7 @@
       "label": "@chromatic-com/storybook",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "chromatic_com_storybook",
       "community": 0,
@@ -807,7 +851,7 @@
       "label": "@storybook/addon-a11y",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "package_devdependencies_storybook_addon_a11y",
       "community": 0,
@@ -818,7 +862,7 @@
       "label": "@storybook/addon-a11y",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "storybook_addon_a11y",
       "community": 0,
@@ -829,7 +873,7 @@
       "label": "@storybook/addon-docs",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "package_devdependencies_storybook_addon_docs",
       "community": 0,
@@ -840,7 +884,7 @@
       "label": "@storybook/addon-docs",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "storybook_addon_docs",
       "community": 0,
@@ -851,7 +895,7 @@
       "label": "@storybook/addon-mcp",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "package_devdependencies_storybook_addon_mcp",
       "community": 0,
@@ -862,7 +906,7 @@
       "label": "@storybook/addon-mcp",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "storybook_addon_mcp",
       "community": 0,
@@ -873,7 +917,7 @@
       "label": "@storybook/addon-vitest",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "package_devdependencies_storybook_addon_vitest",
       "community": 0,
@@ -884,7 +928,7 @@
       "label": "@storybook/addon-vitest",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "storybook_addon_vitest",
       "community": 0,
@@ -895,7 +939,7 @@
       "label": "@storybook/nextjs-vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "package_devdependencies_storybook_nextjs_vite",
       "community": 0,
@@ -906,7 +950,7 @@
       "label": "@storybook/nextjs-vite",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "storybook_nextjs_vite",
       "community": 0,
@@ -917,7 +961,7 @@
       "label": "@tailwindcss/postcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "package_devdependencies_tailwindcss_postcss",
       "community": 0,
@@ -928,7 +972,7 @@
       "label": "@tailwindcss/postcss",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "tailwindcss_postcss",
       "community": 0,
@@ -939,7 +983,7 @@
       "label": "@types/node",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "package_devdependencies_types_node",
       "community": 0,
@@ -950,7 +994,7 @@
       "label": "@types/node",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "types_node",
       "community": 0,
@@ -961,7 +1005,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "package_devdependencies_types_react",
       "community": 0,
@@ -972,7 +1016,7 @@
       "label": "@types/react",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "types_react",
       "community": 0,
@@ -983,7 +1027,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "package_devdependencies_types_react_dom",
       "community": 0,
@@ -994,7 +1038,7 @@
       "label": "@types/react-dom",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "types_react_dom",
       "community": 0,
@@ -1005,7 +1049,7 @@
       "label": "@vitest/browser-playwright",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L41",
       "_origin": "ast",
       "id": "package_devdependencies_vitest_browser_playwright",
       "community": 0,
@@ -1016,7 +1060,7 @@
       "label": "@vitest/browser-playwright",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L41",
       "_origin": "ast",
       "id": "vitest_browser_playwright",
       "community": 0,
@@ -1027,7 +1071,7 @@
       "label": "@vitest/coverage-v8",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "package_devdependencies_vitest_coverage_v8",
       "community": 0,
@@ -1038,7 +1082,7 @@
       "label": "@vitest/coverage-v8",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "vitest_coverage_v8",
       "community": 0,
@@ -1049,7 +1093,7 @@
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L43",
       "_origin": "ast",
       "id": "package_devdependencies_eslint",
       "community": 0,
@@ -1060,7 +1104,7 @@
       "label": "eslint",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L43",
       "_origin": "ast",
       "id": "eslint",
       "community": 0,
@@ -1071,7 +1115,7 @@
       "label": "eslint-config-next",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L44",
       "_origin": "ast",
       "id": "package_devdependencies_eslint_config_next",
       "community": 0,
@@ -1082,7 +1126,7 @@
       "label": "eslint-config-next",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L44",
       "_origin": "ast",
       "id": "eslint_config_next",
       "community": 0,
@@ -1093,7 +1137,7 @@
       "label": "eslint-plugin-storybook",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L43",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "package_devdependencies_eslint_plugin_storybook",
       "community": 0,
@@ -1104,7 +1148,7 @@
       "label": "eslint-plugin-storybook",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L43",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "eslint_plugin_storybook",
       "community": 0,
@@ -1115,7 +1159,7 @@
       "label": "playwright",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L44",
+      "source_location": "L46",
       "_origin": "ast",
       "id": "package_devdependencies_playwright",
       "community": 0,
@@ -1126,7 +1170,7 @@
       "label": "playwright",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L44",
+      "source_location": "L46",
       "_origin": "ast",
       "id": "playwright",
       "community": 0,
@@ -1137,7 +1181,7 @@
       "label": "sass",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L47",
       "_origin": "ast",
       "id": "package_devdependencies_sass",
       "community": 0,
@@ -1148,7 +1192,7 @@
       "label": "sass",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L47",
       "_origin": "ast",
       "id": "sass",
       "community": 0,
@@ -1159,7 +1203,7 @@
       "label": "storybook",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L48",
       "_origin": "ast",
       "id": "package_devdependencies_storybook",
       "community": 0,
@@ -1170,7 +1214,7 @@
       "label": "storybook",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L48",
       "_origin": "ast",
       "id": "storybook",
       "community": 0,
@@ -1181,7 +1225,7 @@
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L49",
       "_origin": "ast",
       "id": "package_devdependencies_tailwindcss",
       "community": 0,
@@ -1192,7 +1236,7 @@
       "label": "tailwindcss",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L49",
       "_origin": "ast",
       "id": "tailwindcss",
       "community": 0,
@@ -1203,7 +1247,7 @@
       "label": "typescript",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L50",
       "_origin": "ast",
       "id": "package_devdependencies_typescript",
       "community": 0,
@@ -1214,7 +1258,7 @@
       "label": "typescript",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L50",
       "_origin": "ast",
       "id": "typescript",
       "community": 0,
@@ -1225,7 +1269,7 @@
       "label": "vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L49",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "package_devdependencies_vite",
       "community": 0,
@@ -1236,7 +1280,7 @@
       "label": "vite",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L49",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "vite",
       "community": 0,
@@ -1247,7 +1291,7 @@
       "label": "vitest",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L50",
+      "source_location": "L52",
       "_origin": "ast",
       "id": "package_devdependencies_vitest",
       "community": 0,
@@ -1258,7 +1302,7 @@
       "label": "vitest",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L50",
+      "source_location": "L52",
       "_origin": "ast",
       "id": "vitest",
       "community": 0,
@@ -1294,30 +1338,30 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_main_profile_page",
-      "community": 33,
-      "community_name": "profile/page.tsx",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
       "norm_label": "profile/page.tsx"
     },
     {
       "label": "metadata",
       "file_type": "code",
       "source_file": "src/app/(main)/profile/page.tsx",
-      "source_location": "L3",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "src_app_main_profile_page_metadata",
-      "community": 33,
-      "community_name": "profile/page.tsx",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
       "norm_label": "metadata"
     },
     {
       "label": "ProfilePage()",
       "file_type": "code",
       "source_file": "src/app/(main)/profile/page.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "src_app_main_profile_page_profilepage",
-      "community": 33,
-      "community_name": "profile/page.tsx",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
       "norm_label": "profilepage()"
     },
     {
@@ -1327,8 +1371,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_api_auth_login_route",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 15,
+      "community_name": "Home Page",
       "norm_label": "login/route.ts"
     },
     {
@@ -1338,8 +1382,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_app_api_auth_login_route_apienvelope",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 15,
+      "community_name": "Home Page",
       "norm_label": "apienvelope"
     },
     {
@@ -1349,8 +1393,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_app_api_auth_login_route_loginresponsedto",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 15,
+      "community_name": "Home Page",
       "norm_label": "loginresponsedto"
     },
     {
@@ -1360,8 +1404,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_app_api_auth_login_route_auth_cookie_options",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 15,
+      "community_name": "Home Page",
       "norm_label": "auth_cookie_options"
     },
     {
@@ -1371,8 +1415,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_app_api_auth_login_route_post",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 15,
+      "community_name": "Home Page",
       "norm_label": "post()"
     },
     {
@@ -1404,30 +1448,30 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_auth_activate_page",
-      "community": 12,
-      "community_name": "Package Scripts",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
       "norm_label": "activate/page.tsx"
     },
     {
       "label": "metadata",
       "file_type": "code",
       "source_file": "src/app/auth/activate/page.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "src_app_auth_activate_page_metadata",
-      "community": 12,
-      "community_name": "Package Scripts",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
       "norm_label": "metadata"
     },
     {
       "label": "ActivatePage()",
       "file_type": "code",
       "source_file": "src/app/auth/activate/page.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "src_app_auth_activate_page_activatepage",
-      "community": 12,
-      "community_name": "Package Scripts",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
       "norm_label": "activatepage()"
     },
     {
@@ -1437,19 +1481,19 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_auth_layout",
-      "community": 32,
-      "community_name": "auth/layout.tsx",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
       "norm_label": "auth/layout.tsx"
     },
     {
       "label": "AuthLayout()",
       "file_type": "code",
       "source_file": "src/app/auth/layout.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "src_app_auth_layout_authlayout",
-      "community": 32,
-      "community_name": "auth/layout.tsx",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
       "norm_label": "authlayout()"
     },
     {
@@ -1467,7 +1511,7 @@
       "label": "metadata",
       "file_type": "code",
       "source_file": "src/app/auth/login/page.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "src_app_auth_login_page_metadata",
       "community": 11,
@@ -1478,7 +1522,7 @@
       "label": "LoginPage()",
       "file_type": "code",
       "source_file": "src/app/auth/login/page.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "src_app_auth_login_page_loginpage",
       "community": 11,
@@ -1492,30 +1536,30 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_auth_register_page",
-      "community": 6,
-      "community_name": "Architecture Constitution Rules",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
       "norm_label": "register/page.tsx"
     },
     {
       "label": "metadata",
       "file_type": "code",
       "source_file": "src/app/auth/register/page.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "src_app_auth_register_page_metadata",
-      "community": 6,
-      "community_name": "Architecture Constitution Rules",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
       "norm_label": "metadata"
     },
     {
       "label": "RegisterPage()",
       "file_type": "code",
       "source_file": "src/app/auth/register/page.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "src_app_auth_register_page_registerpage",
-      "community": 6,
-      "community_name": "Architecture Constitution Rules",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
       "norm_label": "registerpage()"
     },
     {
@@ -1533,7 +1577,7 @@
       "label": "geistSans",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "src_app_layout_geistsans",
       "community": 29,
@@ -1544,7 +1588,7 @@
       "label": "geistMono",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "src_app_layout_geistmono",
       "community": 29,
@@ -1555,7 +1599,7 @@
       "label": "metadata",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "src_app_layout_metadata",
       "community": 29,
@@ -1566,7 +1610,7 @@
       "label": "RootLayout()",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "src_app_layout_rootlayout",
       "community": 29,
@@ -1602,8 +1646,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_auth_components_activate_form",
-      "community": 12,
-      "community_name": "Package Scripts",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "activate-form.tsx"
     },
     {
@@ -1613,8 +1657,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_features_auth_components_activate_form_default_values",
-      "community": 12,
-      "community_name": "Package Scripts",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "default_values"
     },
     {
@@ -1624,8 +1668,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_features_auth_components_activate_form_formatcountdown",
-      "community": 12,
-      "community_name": "Package Scripts",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "formatcountdown()"
     },
     {
@@ -1635,8 +1679,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_features_auth_components_activate_form_activateform",
-      "community": 12,
-      "community_name": "Package Scripts",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "activateform()"
     },
     {
@@ -1646,30 +1690,30 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_auth_components_login_form",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "login-form.tsx"
     },
     {
       "label": "DEFAULT_VALUES",
       "file_type": "code",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "src_features_auth_components_login_form_default_values",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "default_values"
     },
     {
       "label": "LoginForm()",
       "file_type": "code",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L23",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "src_features_auth_components_login_form_loginform",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "loginform()"
     },
     {
@@ -1687,7 +1731,7 @@
       "label": "PROFILE_TYPE_LABELS",
       "file_type": "code",
       "source_file": "src/features/auth/components/register-form.tsx",
-      "source_location": "L30",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "src_features_auth_components_register_form_profile_type_labels",
       "community": 6,
@@ -1698,7 +1742,7 @@
       "label": "DEFAULT_VALUES",
       "file_type": "code",
       "source_file": "src/features/auth/components/register-form.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "src_features_auth_components_register_form_default_values",
       "community": 6,
@@ -1709,7 +1753,7 @@
       "label": "RegisterForm()",
       "file_type": "code",
       "source_file": "src/features/auth/components/register-form.tsx",
-      "source_location": "L48",
+      "source_location": "L49",
       "_origin": "ast",
       "id": "src_features_auth_components_register_form_registerform",
       "community": 6,
@@ -1720,9 +1764,9 @@
       "label": "TODO: province/ward are temporary text fields (no real select yet),",
       "file_type": "rationale",
       "source_file": "src/features/auth/components/register-form.tsx",
-      "source_location": "L70",
+      "source_location": "L71",
       "_origin": "ast",
-      "id": "src_features_auth_components_register_form_rationale_70",
+      "id": "src_features_auth_components_register_form_rationale_71",
       "community": 6,
       "community_name": "Architecture Constitution Rules",
       "norm_label": "todo: province/ward are temporary text fields (no real select yet),"
@@ -1742,7 +1786,7 @@
       "label": "useActivate()",
       "file_type": "code",
       "source_file": "src/features/auth/hooks/use-activate.ts",
-      "source_location": "L12",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "src_features_auth_hooks_use_activate_useactivate",
       "community": 12,
@@ -1756,19 +1800,19 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_auth_hooks_use_login",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 12,
+      "community_name": "Package Scripts",
       "norm_label": "use-login.ts"
     },
     {
       "label": "useLogin()",
       "file_type": "code",
       "source_file": "src/features/auth/hooks/use-login.ts",
-      "source_location": "L10",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "src_features_auth_hooks_use_login_uselogin",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "uselogin()"
     },
     {
@@ -1786,7 +1830,7 @@
       "label": "useRegister()",
       "file_type": "code",
       "source_file": "src/features/auth/hooks/use-register.ts",
-      "source_location": "L12",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "src_features_auth_hooks_use_register_useregister",
       "community": 6,
@@ -1910,8 +1954,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_auth_types_login_type",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 12,
+      "community_name": "Package Scripts",
       "norm_label": "login.type.ts"
     },
     {
@@ -1921,8 +1965,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_features_auth_types_login_type_logintype",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 12,
+      "community_name": "Package Scripts",
       "norm_label": "logintype"
     },
     {
@@ -1932,8 +1976,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_features_auth_types_login_type_loginformvalues",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 12,
+      "community_name": "Package Scripts",
       "norm_label": "loginformvalues"
     },
     {
@@ -1943,8 +1987,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_features_auth_types_login_type_loginpayload",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 12,
+      "community_name": "Package Scripts",
       "norm_label": "loginpayload"
     },
     {
@@ -1954,8 +1998,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_features_auth_types_login_type_loginresult",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 12,
+      "community_name": "Package Scripts",
       "norm_label": "loginresult"
     },
     {
@@ -1965,8 +2009,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_auth_types_register_type",
-      "community": 6,
-      "community_name": "Architecture Constitution Rules",
+      "community": 12,
+      "community_name": "Package Scripts",
       "norm_label": "register.type.ts"
     },
     {
@@ -1976,8 +2020,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_auth_types_register_type_register_types",
-      "community": 6,
-      "community_name": "Architecture Constitution Rules",
+      "community": 12,
+      "community_name": "Package Scripts",
       "norm_label": "register_types"
     },
     {
@@ -1987,8 +2031,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "src_features_auth_types_register_type_registertype",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 12,
+      "community_name": "Package Scripts",
       "norm_label": "registertype"
     },
     {
@@ -2009,8 +2053,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_features_auth_types_register_type_profiletype",
-      "community": 6,
-      "community_name": "Architecture Constitution Rules",
+      "community": 12,
+      "community_name": "Package Scripts",
       "norm_label": "profiletype"
     },
     {
@@ -2075,8 +2119,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_auth_validations_login_validation",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 12,
+      "community_name": "Package Scripts",
       "norm_label": "login.validation.ts"
     },
     {
@@ -2086,8 +2130,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_features_auth_validations_login_validation_loginvalidationschema",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 12,
+      "community_name": "Package Scripts",
       "norm_label": "loginvalidationschema"
     },
     {
@@ -2113,15 +2157,37 @@
       "norm_label": "registervalidationschema"
     },
     {
-      "label": "query-client.provider.ts",
+      "label": "query-client.provider.tsx",
       "file_type": "code",
-      "source_file": "src/providers/query-client.provider.ts",
+      "source_file": "src/providers/query-client.provider.tsx",
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_providers_query_client_provider",
-      "community": 36,
-      "community_name": "query-client.provider.ts",
-      "norm_label": "query-client.provider.ts"
+      "community": 29,
+      "community_name": "Shared Utils",
+      "norm_label": "query-client.provider.tsx"
+    },
+    {
+      "label": "queryClientConfig",
+      "file_type": "code",
+      "source_file": "src/providers/query-client.provider.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "src_providers_query_client_provider_queryclientconfig",
+      "community": 29,
+      "community_name": "Shared Utils",
+      "norm_label": "queryclientconfig"
+    },
+    {
+      "label": "QueryProvider()",
+      "file_type": "code",
+      "source_file": "src/providers/query-client.provider.tsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "src_providers_query_client_provider_queryprovider",
+      "community": 29,
+      "community_name": "Shared Utils",
+      "norm_label": "queryprovider()"
     },
     {
       "label": "socket.provider.ts",
@@ -2240,8 +2306,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_components_atoms_label",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "label.tsx"
     },
     {
@@ -2251,8 +2317,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_shared_components_atoms_label_label",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "label()"
     },
     {
@@ -2394,8 +2460,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_components_atoms_toggle",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "toggle.tsx"
     },
     {
@@ -2405,8 +2471,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_shared_components_atoms_toggle_toggle",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "toggle()"
     },
     {
@@ -2416,8 +2482,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_shared_components_atoms_toggle_toggleitem",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "toggleitem()"
     },
     {
@@ -2427,8 +2493,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_components_molecules_avatar_file_input",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "avatar-file-input.tsx"
     },
     {
@@ -2438,8 +2504,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_shared_components_molecules_avatar_file_input_avatarfileinputprops",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "avatarfileinputprops"
     },
     {
@@ -2449,8 +2515,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_shared_components_molecules_avatar_file_input_avatarfileinput",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "avatarfileinput()"
     },
     {
@@ -2504,9 +2570,31 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_shared_components_molecules_password_input_passwordinput",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "passwordinput()"
+    },
+    {
+      "label": "page.constant.ts",
+      "file_type": "code",
+      "source_file": "src/shared/constants/page.constant.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_shared_constants_page_constant",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
+      "norm_label": "page.constant.ts"
+    },
+    {
+      "label": "PAGES",
+      "file_type": "code",
+      "source_file": "src/shared/constants/page.constant.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_shared_constants_page_constant_pages",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
+      "norm_label": "pages"
     },
     {
       "label": "with-server-token.tsx",
@@ -2542,10 +2630,32 @@
       "norm_label": "client.ts"
     },
     {
+      "label": "axios",
+      "file_type": "code",
+      "source_file": "src/shared/libs/axios/client.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "src_shared_libs_axios_client_axios",
+      "community": 12,
+      "community_name": "Package Scripts",
+      "norm_label": "axios"
+    },
+    {
+      "label": "AxiosRequestConfig",
+      "file_type": "code",
+      "source_file": "src/shared/libs/axios/client.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "src_shared_libs_axios_client_axiosrequestconfig",
+      "community": 12,
+      "community_name": "Package Scripts",
+      "norm_label": "axiosrequestconfig"
+    },
+    {
       "label": "axiosClient",
       "file_type": "code",
       "source_file": "src/shared/libs/axios/client.ts",
-      "source_location": "L8",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "src_shared_libs_axios_client_axiosclient",
       "community": 12,
@@ -2578,12 +2688,23 @@
       "label": "getApiErrorMessage()",
       "file_type": "code",
       "source_file": "src/shared/libs/axios/error.ts",
-      "source_location": "L11",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "src_shared_libs_axios_error_getapierrormessage",
       "community": 12,
       "community_name": "Package Scripts",
       "norm_label": "getapierrormessage()"
+    },
+    {
+      "label": "getApiErrorCode()",
+      "file_type": "code",
+      "source_file": "src/shared/libs/axios/error.ts",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "src_shared_libs_axios_error_getapierrorcode",
+      "community": 12,
+      "community_name": "Package Scripts",
+      "norm_label": "getapierrorcode()"
     },
     {
       "label": "server.ts",
@@ -2669,8 +2790,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_libs_utils",
-      "community": 32,
-      "community_name": "auth/layout.tsx",
+      "community": 11,
+      "community_name": "TSConfig Include Files",
       "norm_label": "utils.ts"
     },
     {
@@ -2801,8 +2922,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "stories_shared_components_atoms_label_stories",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "label.stories.tsx"
     },
     {
@@ -2812,8 +2933,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "stories_shared_components_atoms_label_stories_story",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "story"
     },
     {
@@ -2823,8 +2944,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "stories_shared_components_atoms_label_stories_default",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "default"
     },
     {
@@ -2834,8 +2955,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "stories_shared_components_atoms_label_stories_withinput",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "withinput"
     },
     {
@@ -2955,8 +3076,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "stories_shared_components_atoms_toggle_stories",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "toggle.stories.tsx"
     },
     {
@@ -2966,8 +3087,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "stories_shared_components_atoms_toggle_stories_story",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "story"
     },
     {
@@ -2977,8 +3098,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "stories_shared_components_atoms_toggle_stories_default",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "default"
     },
     {
@@ -2988,8 +3109,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "stories_shared_components_atoms_toggle_stories_threeitems",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "threeitems"
     },
     {
@@ -2999,8 +3120,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "stories_shared_components_atoms_toggle_stories_disabled",
-      "community": 11,
-      "community_name": "TSConfig Include Files",
+      "community": 5,
+      "community_name": "Auth API Endpoints",
       "norm_label": "disabled"
     },
     {
@@ -3010,8 +3131,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "stories_shared_components_molecules_avatar_file_input_stories",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "avatar-file-input.stories.tsx"
     },
     {
@@ -3021,8 +3142,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "stories_shared_components_molecules_avatar_file_input_stories_story",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "story"
     },
     {
@@ -3032,8 +3153,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "stories_shared_components_molecules_avatar_file_input_stories_controlledavatarfileinput",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "controlledavatarfileinput()"
     },
     {
@@ -3043,8 +3164,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "stories_shared_components_molecules_avatar_file_input_stories_default",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "default"
     },
     {
@@ -3054,8 +3175,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "stories_shared_components_molecules_avatar_file_input_stories_disabled",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "disabled"
     },
     {
@@ -3131,8 +3252,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "stories_shared_components_molecules_password_input_stories",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "password-input.stories.tsx"
     },
     {
@@ -3142,8 +3263,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "stories_shared_components_molecules_password_input_stories_story",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "story"
     },
     {
@@ -3153,8 +3274,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "stories_shared_components_molecules_password_input_stories_default",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "default"
     },
     {
@@ -3164,8 +3285,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "stories_shared_components_molecules_password_input_stories_withvalue",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "withvalue"
     },
     {
@@ -3175,8 +3296,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "stories_shared_components_molecules_password_input_stories_disabled",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "disabled"
     },
     {
@@ -3186,8 +3307,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "stories_shared_components_molecules_password_input_stories_invalid",
-      "community": 5,
-      "community_name": "Auth API Endpoints",
+      "community": 32,
+      "community_name": "auth/layout.tsx",
       "norm_label": "invalid"
     },
     {
@@ -4093,6 +4214,116 @@
       "norm_label": "chunk order"
     },
     {
+      "label": "2026-09-10-page-constants.md",
+      "file_type": "document",
+      "source_file": ".claude/docs/fe-build/2026-09-10-page-constants.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude_docs_fe_build_2026_09_10_page_constants",
+      "community": 33,
+      "community_name": "profile/page.tsx",
+      "norm_label": "2026-09-10-page-constants.md"
+    },
+    {
+      "label": "Khai b\u00e1o constant PAGES (pathname + title) d\u00f9ng cho navigate v\u00e0 metadata",
+      "file_type": "document",
+      "source_file": ".claude/docs/fe-build/2026-09-10-page-constants.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude_docs_fe_build_2026_09_10_page_constants_khai_b\u00e1o_constant_pages_pathname_title_d\u00f9ng_cho_navigate_v\u00e0_metadata",
+      "community": 33,
+      "community_name": "profile/page.tsx",
+      "norm_label": "khai bao constant pages (pathname + title) dung cho navigate va metadata"
+    },
+    {
+      "label": "1. Constant (file m\u1edbi)",
+      "file_type": "document",
+      "source_file": ".claude/docs/fe-build/2026-09-10-page-constants.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "claude_docs_fe_build_2026_09_10_page_constants_1_constant_file_m\u1edbi",
+      "community": 33,
+      "community_name": "profile/page.tsx",
+      "norm_label": "1. constant (file moi)"
+    },
+    {
+      "label": "2. \u00c1p d\u1ee5ng cho metadata (s\u1eeda file c\u00f3 s\u1eb5n)",
+      "file_type": "document",
+      "source_file": ".claude/docs/fe-build/2026-09-10-page-constants.md",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "claude_docs_fe_build_2026_09_10_page_constants_2_\u00e1p_d\u1ee5ng_cho_metadata_s\u1eeda_file_c\u00f3_s\u1eb5n",
+      "community": 33,
+      "community_name": "profile/page.tsx",
+      "norm_label": "2. ap dung cho metadata (sua file co san)"
+    },
+    {
+      "label": "3. \u00c1p d\u1ee5ng cho navigate (s\u1eeda file c\u00f3 s\u1eb5n)",
+      "file_type": "document",
+      "source_file": ".claude/docs/fe-build/2026-09-10-page-constants.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "claude_docs_fe_build_2026_09_10_page_constants_3_\u00e1p_d\u1ee5ng_cho_navigate_s\u1eeda_file_c\u00f3_s\u1eb5n",
+      "community": 33,
+      "community_name": "profile/page.tsx",
+      "norm_label": "3. ap dung cho navigate (sua file co san)"
+    },
+    {
+      "label": "2026-09-10-react-query-setup.md",
+      "file_type": "document",
+      "source_file": ".claude/docs/fe-build/2026-09-10-react-query-setup.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude_docs_fe_build_2026_09_10_react_query_setup",
+      "community": 36,
+      "community_name": "query-client.provider.ts",
+      "norm_label": "2026-09-10-react-query-setup.md"
+    },
+    {
+      "label": "C\u00e0i \u0111\u1eb7t & c\u1ea5u h\u00ecnh React Query, \u00e1p d\u1ee5ng cho auth hooks",
+      "file_type": "document",
+      "source_file": ".claude/docs/fe-build/2026-09-10-react-query-setup.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude_docs_fe_build_2026_09_10_react_query_setup_c\u00e0i_\u0111\u1eb7t_c\u1ea5u_h\u00ecnh_react_query_\u00e1p_d\u1ee5ng_cho_auth_hooks",
+      "community": 36,
+      "community_name": "query-client.provider.ts",
+      "norm_label": "cai \u0111at & cau hinh react query, ap dung cho auth hooks"
+    },
+    {
+      "label": "1. UI",
+      "file_type": "document",
+      "source_file": ".claude/docs/fe-build/2026-09-10-react-query-setup.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "claude_docs_fe_build_2026_09_10_react_query_setup_1_ui",
+      "community": 36,
+      "community_name": "query-client.provider.ts",
+      "norm_label": "1. ui"
+    },
+    {
+      "label": "2. Logic",
+      "file_type": "document",
+      "source_file": ".claude/docs/fe-build/2026-09-10-react-query-setup.md",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "claude_docs_fe_build_2026_09_10_react_query_setup_2_logic",
+      "community": 36,
+      "community_name": "query-client.provider.ts",
+      "norm_label": "2. logic"
+    },
+    {
+      "label": "3. Kh\u00e1c",
+      "file_type": "document",
+      "source_file": ".claude/docs/fe-build/2026-09-10-react-query-setup.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "claude_docs_fe_build_2026_09_10_react_query_setup_3_kh\u00e1c",
+      "community": 36,
+      "community_name": "query-client.provider.ts",
+      "norm_label": "3. khac"
+    },
+    {
       "label": "SKILL.md",
       "file_type": "document",
       "source_file": ".claude/skills/fe-build/SKILL.md",
@@ -4235,8 +4466,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "agents.md",
-      "id": "agents_doc",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "agents_doc"
     },
     {
       "label": "Non-standard Next.js breaking-changes warning",
@@ -4249,8 +4480,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "non-standard next.js breaking-changes warning",
-      "id": "agents_breaking_changes_notice",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "agents_breaking_changes_notice"
     },
     {
       "label": "node_modules/next/dist/docs/ reference guides",
@@ -4263,8 +4494,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "node_modules/next/dist/docs/ reference guides",
-      "id": "agents_docs_directory",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "agents_docs_directory"
     },
     {
       "label": "generate-agent-files.js regenerates AGENTS.md block on next dev",
@@ -4277,8 +4508,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "generate-agent-files.js regenerates agents.md block on next dev",
-      "id": "agents_generate_agent_files_mechanism",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "agents_generate_agent_files_mechanism"
     },
     {
       "label": "Next.js (modified/non-standard fork used in this project)",
@@ -4291,8 +4522,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "next.js (modified/non-standard fork used in this project)",
-      "id": "agents_nextjs",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "agents_nextjs"
     },
     {
       "label": "webapp CLAUDE.md project instructions",
@@ -4305,8 +4536,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "webapp claude.md project instructions",
-      "id": "claude_doc",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "claude_doc"
     },
     {
       "label": "graphify knowledge-graph skill (project rules)",
@@ -4319,8 +4550,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "graphify knowledge-graph skill (project rules)",
-      "id": "claude_graphify_skill",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "claude_graphify_skill"
     },
     {
       "label": "graphify-out/ knowledge graph (god nodes, community structure)",
@@ -4333,8 +4564,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "graphify-out/ knowledge graph (god nodes, community structure)",
-      "id": "claude_graphify_out_graph",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "claude_graphify_out_graph"
     },
     {
       "label": "graphify query / path / explain commands",
@@ -4347,8 +4578,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "graphify query / path / explain commands",
-      "id": "claude_graphify_query_commands",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "claude_graphify_query_commands"
     },
     {
       "label": "graphify-out/wiki/index.md navigation",
@@ -4361,8 +4592,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "graphify-out/wiki/index.md navigation",
-      "id": "claude_graphify_wiki_index",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "claude_graphify_wiki_index"
     },
     {
       "label": "graphify-out/GRAPH_REPORT.md broad architecture doc",
@@ -4375,8 +4606,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "graphify-out/graph_report.md broad architecture doc",
-      "id": "claude_graphify_graph_report",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "claude_graphify_graph_report"
     },
     {
       "label": "graphify update . (AST-only refresh, no API cost)",
@@ -4389,8 +4620,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "graphify update . (ast-only refresh, no api cost)",
-      "id": "claude_graphify_update",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "claude_graphify_update"
     },
     {
       "label": "README.md",
@@ -4403,8 +4634,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "readme.md",
-      "id": "readme_doc",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "readme_doc"
     },
     {
       "label": "create-next-app bootstrap tool",
@@ -4417,8 +4648,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "create-next-app bootstrap tool",
-      "id": "readme_create_next_app",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "readme_create_next_app"
     },
     {
       "label": "next/font font optimization",
@@ -4431,8 +4662,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "next/font font optimization",
-      "id": "readme_next_font",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "readme_next_font"
     },
     {
       "label": "Geist font family (Vercel)",
@@ -4445,8 +4676,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "geist font family (vercel)",
-      "id": "readme_geist_font",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "readme_geist_font"
     },
     {
       "label": "Vercel deployment platform",
@@ -4459,8 +4690,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "vercel deployment platform",
-      "id": "readme_vercel_platform",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "readme_vercel_platform"
     },
     {
       "label": "Next.js official documentation link",
@@ -4473,8 +4704,8 @@
       "contributor": null,
       "community": 7,
       "norm_label": "next.js official documentation link",
-      "id": "readme_nextjs_docs",
-      "community_name": "AI Agent Instructions"
+      "community_name": "AI Agent Instructions",
+      "id": "readme_nextjs_docs"
     },
     {
       "label": "Mekongo API OpenAPI spec (v0.0.1)",
@@ -4487,8 +4718,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "mekongo api openapi spec (v0.0.1)",
-      "id": "guide_openapi_doc",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_doc"
     },
     {
       "label": "access-token security scheme (Bearer JWT)",
@@ -4501,8 +4732,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "access-token security scheme (bearer jwt)",
-      "id": "guide_openapi_security_access_token",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_security_access_token"
     },
     {
       "label": "AppController",
@@ -4515,8 +4746,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "appcontroller",
-      "id": "guide_openapi_appcontroller",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_appcontroller"
     },
     {
       "label": "AccountController",
@@ -4529,8 +4760,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "accountcontroller",
-      "id": "guide_openapi_accountcontroller",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_accountcontroller"
     },
     {
       "label": "AuthController",
@@ -4541,10 +4772,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "authcontroller",
-      "id": "guide_openapi_authcontroller",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_authcontroller"
     },
     {
       "label": "VerificationController",
@@ -4557,8 +4788,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "verificationcontroller",
-      "id": "guide_openapi_verificationcontroller",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_verificationcontroller"
     },
     {
       "label": "PostController",
@@ -4571,8 +4802,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "postcontroller",
-      "id": "guide_openapi_postcontroller",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_postcontroller"
     },
     {
       "label": "UploadController",
@@ -4585,8 +4816,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "uploadcontroller",
-      "id": "guide_openapi_uploadcontroller",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_uploadcontroller"
     },
     {
       "label": "CommentController",
@@ -4597,10 +4828,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "commentcontroller",
-      "id": "guide_openapi_commentcontroller",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_commentcontroller"
     },
     {
       "label": "NotificationController",
@@ -4611,10 +4842,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "notificationcontroller",
-      "id": "guide_openapi_notificationcontroller",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_notificationcontroller"
     },
     {
       "label": "LikeController",
@@ -4627,8 +4858,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "likecontroller",
-      "id": "guide_openapi_likecontroller",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_likecontroller"
     },
     {
       "label": "ChatController",
@@ -4641,8 +4872,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "chatcontroller",
-      "id": "guide_openapi_chatcontroller",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_chatcontroller"
     },
     {
       "label": "GET / (AppController_getHello)",
@@ -4655,8 +4886,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "get / (appcontroller_gethello)",
-      "id": "guide_openapi_appcontroller_gethello",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_appcontroller_gethello"
     },
     {
       "label": "GET /account \u2014 L\u1ea5y th\u00f4ng tin account \u0111ang \u0111\u0103ng nh\u1eadp",
@@ -4669,8 +4900,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "get /account \u2014 lay thong tin account \u0111ang \u0111ang nhap",
-      "id": "guide_openapi_accountcontroller_getaccount",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_accountcontroller_getaccount"
     },
     {
       "label": "POST /account/change-password \u2014 \u0110\u1ed5i m\u1eadt kh\u1ea9u account \u0111ang \u0111\u0103ng nh\u1eadp",
@@ -4683,8 +4914,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "post /account/change-password \u2014 \u0111oi mat khau account \u0111ang \u0111ang nhap",
-      "id": "guide_openapi_accountcontroller_changepassword",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_accountcontroller_changepassword"
     },
     {
       "label": "PUT /account/update \u2014 C\u1eadp nh\u1eadt displayName/avatarUrl profile",
@@ -4697,8 +4928,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "put /account/update \u2014 cap nhat displayname/avatarurl profile",
-      "id": "guide_openapi_accountcontroller_updateprofile",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_accountcontroller_updateprofile"
     },
     {
       "label": "GET /account/address \u2014 L\u1ea5y danh s\u00e1ch address",
@@ -4711,8 +4942,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "get /account/address \u2014 lay danh sach address",
-      "id": "guide_openapi_accountcontroller_getaddresses",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_accountcontroller_getaddresses"
     },
     {
       "label": "POST /account/address \u2014 T\u1ea1o address m\u1edbi",
@@ -4725,8 +4956,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "post /account/address \u2014 tao address moi",
-      "id": "guide_openapi_accountcontroller_createaddress",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_accountcontroller_createaddress"
     },
     {
       "label": "DELETE /account/address \u2014 Xo\u00e1 address",
@@ -4739,8 +4970,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "delete /account/address \u2014 xoa address",
-      "id": "guide_openapi_accountcontroller_deleteaddress",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_accountcontroller_deleteaddress"
     },
     {
       "label": "PUT /account/set-profile-address \u2014 G\u00e1n address cho profile",
@@ -4753,8 +4984,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "put /account/set-profile-address \u2014 gan address cho profile",
-      "id": "guide_openapi_accountcontroller_setprofileaddress",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_accountcontroller_setprofileaddress"
     },
     {
       "label": "POST /account/profile \u2014 T\u1ea1o profile m\u1edbi (max 3 per account)",
@@ -4767,8 +4998,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "post /account/profile \u2014 tao profile moi (max 3 per account)",
-      "id": "guide_openapi_accountcontroller_createprofile",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_accountcontroller_createprofile"
     },
     {
       "label": "GET /account/profile \u2014 L\u1ea5y danh s\u00e1ch profile",
@@ -4781,8 +5012,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "get /account/profile \u2014 lay danh sach profile",
-      "id": "guide_openapi_accountcontroller_getprofiles",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_accountcontroller_getprofiles"
     },
     {
       "label": "PUT /account/set-active-profile \u2014 Set activeProfileId",
@@ -4795,8 +5026,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "put /account/set-active-profile \u2014 set activeprofileid",
-      "id": "guide_openapi_accountcontroller_setactiveprofile",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_accountcontroller_setactiveprofile"
     },
     {
       "label": "POST /auth/register \u2014 \u0110\u0103ng k\u00fd account m\u1edbi",
@@ -4807,10 +5038,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "post /auth/register \u2014 \u0111ang ky account moi",
-      "id": "guide_openapi_authcontroller_register",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_authcontroller_register"
     },
     {
       "label": "POST /auth/activate \u2014 X\u00e1c th\u1ef1c OTP k\u00edch ho\u1ea1t account",
@@ -4821,10 +5052,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "post /auth/activate \u2014 xac thuc otp kich hoat account",
-      "id": "guide_openapi_authcontroller_activate",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_authcontroller_activate"
     },
     {
       "label": "POST /auth/reset-password \u2014 Y\u00eau c\u1ea7u OTP \u0111\u1eb7t l\u1ea1i m\u1eadt kh\u1ea9u",
@@ -4835,10 +5066,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "post /auth/reset-password \u2014 yeu cau otp \u0111at lai mat khau",
-      "id": "guide_openapi_authcontroller_resetpassword",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_authcontroller_resetpassword"
     },
     {
       "label": "POST /auth/change-password \u2014 X\u00e1c th\u1ef1c OTP v\u00e0 \u0111\u1ed5i m\u1eadt kh\u1ea9u",
@@ -4849,10 +5080,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "post /auth/change-password \u2014 xac thuc otp va \u0111oi mat khau",
-      "id": "guide_openapi_authcontroller_changepassword",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_authcontroller_changepassword"
     },
     {
       "label": "POST /auth/login \u2014 \u0110\u0103ng nh\u1eadp, tr\u1ea3 accessToken+refreshToken",
@@ -4863,10 +5094,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "post /auth/login \u2014 \u0111ang nhap, tra accesstoken+refreshtoken",
-      "id": "guide_openapi_authcontroller_login",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_authcontroller_login"
     },
     {
       "label": "POST /auth/refresh \u2014 C\u1ea5p l\u1ea1i accessToken+refreshToken m\u1edbi",
@@ -4877,10 +5108,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "post /auth/refresh \u2014 cap lai accesstoken+refreshtoken moi",
-      "id": "guide_openapi_authcontroller_refresh",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_authcontroller_refresh"
     },
     {
       "label": "POST /auth/logout \u2014 Thu h\u1ed3i refresh token c\u1ee7a session hi\u1ec7n t\u1ea1i",
@@ -4891,10 +5122,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "post /auth/logout \u2014 thu hoi refresh token cua session hien tai",
-      "id": "guide_openapi_authcontroller_logout",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_authcontroller_logout"
     },
     {
       "label": "POST /auth/ws-token \u2014 C\u1ea5p wsToken ri\u00eang bi\u1ec7t kh\u1ecfi accessToken cho WebSocket gateway",
@@ -4905,10 +5136,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "post /auth/ws-token \u2014 cap wstoken rieng biet khoi accesstoken cho websocket gateway",
-      "id": "guide_openapi_authcontroller_issuewstoken",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_authcontroller_issuewstoken"
     },
     {
       "label": "POST /verification/re-send \u2014 G\u1eedi l\u1ea1i OTP",
@@ -4921,8 +5152,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "post /verification/re-send \u2014 gui lai otp",
-      "id": "guide_openapi_verificationcontroller_resend",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_verificationcontroller_resend"
     },
     {
       "label": "POST /posts \u2014 T\u1ea1o b\u00e0i \u0111\u0103ng m\u1edbi",
@@ -4935,8 +5166,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "post /posts \u2014 tao bai \u0111ang moi",
-      "id": "guide_openapi_postcontroller_create",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_postcontroller_create"
     },
     {
       "label": "POST /uploads/pre-sign-url \u2014 Sinh TMP object key + signed upload URL",
@@ -4949,8 +5180,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "post /uploads/pre-sign-url \u2014 sinh tmp object key + signed upload url",
-      "id": "guide_openapi_uploadcontroller_presignupload",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_uploadcontroller_presignupload"
     },
     {
       "label": "POST /comments \u2014 T\u1ea1o comment m\u1edbi (ho\u1eb7c reply)",
@@ -4961,10 +5192,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "post /comments \u2014 tao comment moi (hoac reply)",
-      "id": "guide_openapi_commentcontroller_create",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_commentcontroller_create"
     },
     {
       "label": "DELETE /comments \u2014 X\u00f3a comment (ch\u01b0a c\u00f3 ph\u1ea3n h\u1ed3i)",
@@ -4975,10 +5206,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "delete /comments \u2014 xoa comment (chua co phan hoi)",
-      "id": "guide_openapi_commentcontroller_delete",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_commentcontroller_delete"
     },
     {
       "label": "GET /comments \u2014 Danh s\u00e1ch comment g\u1ed1c (level 0), ph\u00e2n trang",
@@ -4989,10 +5220,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "get /comments \u2014 danh sach comment goc (level 0), phan trang",
-      "id": "guide_openapi_commentcontroller_getcomments",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_commentcontroller_getcomments"
     },
     {
       "label": "GET /comments/{parentId}/children \u2014 Danh s\u00e1ch comment con tr\u1ef1c ti\u1ebfp",
@@ -5003,10 +5234,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "get /comments/{parentid}/children \u2014 danh sach comment con truc tiep",
-      "id": "guide_openapi_commentcontroller_getcommentchildren",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_commentcontroller_getcommentchildren"
     },
     {
       "label": "GET /notifications \u2014 Danh s\u00e1ch th\u00f4ng b\u00e1o, ph\u00e2n trang",
@@ -5017,10 +5248,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "get /notifications \u2014 danh sach thong bao, phan trang",
-      "id": "guide_openapi_notificationcontroller_getnotifications",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_notificationcontroller_getnotifications"
     },
     {
       "label": "GET /notifications/unread-count \u2014 S\u1ed1 th\u00f4ng b\u00e1o ch\u01b0a \u0111\u1ecdc",
@@ -5031,10 +5262,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "get /notifications/unread-count \u2014 so thong bao chua \u0111oc",
-      "id": "guide_openapi_notificationcontroller_getunreadcount",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_notificationcontroller_getunreadcount"
     },
     {
       "label": "POST /notifications/{id}/read \u2014 \u0110\u00e1nh d\u1ea5u 1 th\u00f4ng b\u00e1o \u0111\u00e3 \u0111\u1ecdc",
@@ -5045,10 +5276,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "post /notifications/{id}/read \u2014 \u0111anh dau 1 thong bao \u0111a \u0111oc",
-      "id": "guide_openapi_notificationcontroller_markasread",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_notificationcontroller_markasread"
     },
     {
       "label": "POST /notifications/read-all \u2014 \u0110\u00e1nh d\u1ea5u t\u1ea5t c\u1ea3 \u0111\u00e3 \u0111\u1ecdc",
@@ -5059,10 +5290,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "post /notifications/read-all \u2014 \u0111anh dau tat ca \u0111a \u0111oc",
-      "id": "guide_openapi_notificationcontroller_markallasread",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_notificationcontroller_markallasread"
     },
     {
       "label": "POST /likes \u2014 Toggle like/unlike 1 post",
@@ -5075,8 +5306,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "post /likes \u2014 toggle like/unlike 1 post",
-      "id": "guide_openapi_likecontroller_toggle",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_likecontroller_toggle"
     },
     {
       "label": "GET /chats/rooms \u2014 Danh s\u00e1ch room chat c\u1ee7a t\u00f4i",
@@ -5089,8 +5320,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "get /chats/rooms \u2014 danh sach room chat cua toi",
-      "id": "guide_openapi_chatcontroller_getrooms",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_chatcontroller_getrooms"
     },
     {
       "label": "GET /chats/messages \u2014 L\u1ecbch s\u1eed tin nh\u1eafn c\u1ee7a 1 room, ph\u00e2n trang",
@@ -5103,8 +5334,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "get /chats/messages \u2014 lich su tin nhan cua 1 room, phan trang",
-      "id": "guide_openapi_chatcontroller_getmessages",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_chatcontroller_getmessages"
     },
     {
       "label": "POST /chats/rooms/read \u2014 \u0110\u00e1nh d\u1ea5u 1 room \u0111\u00e3 \u0111\u1ecdc",
@@ -5117,8 +5348,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "post /chats/rooms/read \u2014 \u0111anh dau 1 room \u0111a \u0111oc",
-      "id": "guide_openapi_chatcontroller_markroomasread",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_chatcontroller_markroomasread"
     },
     {
       "label": "GET /chats/unread-count \u2014 S\u1ed1 room c\u00f3 tin nh\u1eafn ch\u01b0a \u0111\u1ecdc",
@@ -5131,8 +5362,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "get /chats/unread-count \u2014 so room co tin nhan chua \u0111oc",
-      "id": "guide_openapi_chatcontroller_getunreadcount",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_chatcontroller_getunreadcount"
     },
     {
       "label": "AccountResponseDto",
@@ -5145,8 +5376,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "accountresponsedto",
-      "id": "guide_openapi_accountresponsedto",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_accountresponsedto"
     },
     {
       "label": "ChangeOwnPasswordRequestDto",
@@ -5159,8 +5390,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "changeownpasswordrequestdto",
-      "id": "guide_openapi_changeownpasswordrequestdto",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_changeownpasswordrequestdto"
     },
     {
       "label": "UpdateAccountProfileRequestDto",
@@ -5173,8 +5404,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "updateaccountprofilerequestdto",
-      "id": "guide_openapi_updateaccountprofilerequestdto",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_updateaccountprofilerequestdto"
     },
     {
       "label": "AddressResponseDto",
@@ -5187,8 +5418,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "addressresponsedto",
-      "id": "guide_openapi_addressresponsedto",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_addressresponsedto"
     },
     {
       "label": "SetProfileAddressRequestDto",
@@ -5201,8 +5432,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "setprofileaddressrequestdto",
-      "id": "guide_openapi_setprofileaddressrequestdto",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_setprofileaddressrequestdto"
     },
     {
       "label": "CreateAddressRequestDto",
@@ -5215,8 +5446,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "createaddressrequestdto",
-      "id": "guide_openapi_createaddressrequestdto",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_createaddressrequestdto"
     },
     {
       "label": "DeleteAddressRequestDto",
@@ -5229,8 +5460,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "deleteaddressrequestdto",
-      "id": "guide_openapi_deleteaddressrequestdto",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_deleteaddressrequestdto"
     },
     {
       "label": "ProfileResponseDto",
@@ -5243,8 +5474,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "profileresponsedto",
-      "id": "guide_openapi_profileresponsedto",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_profileresponsedto"
     },
     {
       "label": "CreateProfileNewAddressDto",
@@ -5257,8 +5488,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "createprofilenewaddressdto",
-      "id": "guide_openapi_createprofilenewaddressdto",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_createprofilenewaddressdto"
     },
     {
       "label": "CreateProfileRequestDto",
@@ -5271,8 +5502,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "createprofilerequestdto",
-      "id": "guide_openapi_createprofilerequestdto",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_createprofilerequestdto"
     },
     {
       "label": "SetActiveProfileRequestDto",
@@ -5285,8 +5516,8 @@
       "contributor": null,
       "community": 3,
       "norm_label": "setactiveprofilerequestdto",
-      "id": "guide_openapi_setactiveprofilerequestdto",
-      "community_name": "Account API Endpoints"
+      "community_name": "Account API Endpoints",
+      "id": "guide_openapi_setactiveprofilerequestdto"
     },
     {
       "label": "RegisterResponseDto",
@@ -5297,10 +5528,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "registerresponsedto",
-      "id": "guide_openapi_registerresponsedto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_registerresponsedto"
     },
     {
       "label": "RegisterRequestDto",
@@ -5311,10 +5542,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "registerrequestdto",
-      "id": "guide_openapi_registerrequestdto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_registerrequestdto"
     },
     {
       "label": "ActivateRequestDto",
@@ -5325,10 +5556,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "activaterequestdto",
-      "id": "guide_openapi_activaterequestdto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_activaterequestdto"
     },
     {
       "label": "ResetPasswordResponseDto",
@@ -5339,10 +5570,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "resetpasswordresponsedto",
-      "id": "guide_openapi_resetpasswordresponsedto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_resetpasswordresponsedto"
     },
     {
       "label": "ResetPasswordRequestDto",
@@ -5353,10 +5584,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "resetpasswordrequestdto",
-      "id": "guide_openapi_resetpasswordrequestdto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_resetpasswordrequestdto"
     },
     {
       "label": "ChangePasswordRequestDto (auth OTP flow)",
@@ -5367,10 +5598,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "changepasswordrequestdto (auth otp flow)",
-      "id": "guide_openapi_changepasswordrequestdto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_changepasswordrequestdto"
     },
     {
       "label": "LoginResponseDto (accessToken, refreshToken, accountId, profileId)",
@@ -5381,10 +5612,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "loginresponsedto (accesstoken, refreshtoken, accountid, profileid)",
-      "id": "guide_openapi_loginresponsedto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_loginresponsedto"
     },
     {
       "label": "LoginRequestDto",
@@ -5395,10 +5626,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "loginrequestdto",
-      "id": "guide_openapi_loginrequestdto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_loginrequestdto"
     },
     {
       "label": "RefreshTokenResponseDto (accessToken, refreshToken)",
@@ -5409,10 +5640,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "refreshtokenresponsedto (accesstoken, refreshtoken)",
-      "id": "guide_openapi_refreshtokenresponsedto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_refreshtokenresponsedto"
     },
     {
       "label": "RefreshTokenRequestDto",
@@ -5423,10 +5654,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "refreshtokenrequestdto",
-      "id": "guide_openapi_refreshtokenrequestdto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_refreshtokenrequestdto"
     },
     {
       "label": "LogoutRequestDto",
@@ -5437,10 +5668,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "logoutrequestdto",
-      "id": "guide_openapi_logoutrequestdto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_logoutrequestdto"
     },
     {
       "label": "WsTokenResponseDto (wsToken)",
@@ -5451,10 +5682,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 8,
       "norm_label": "wstokenresponsedto (wstoken)",
-      "id": "guide_openapi_wstokenresponsedto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Comment API Endpoints",
+      "id": "guide_openapi_wstokenresponsedto"
     },
     {
       "label": "ReSendRequestDto",
@@ -5467,8 +5698,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "resendrequestdto",
-      "id": "guide_openapi_resendrequestdto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_resendrequestdto"
     },
     {
       "label": "PostResponseDto",
@@ -5481,8 +5712,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "postresponsedto",
-      "id": "guide_openapi_postresponsedto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_postresponsedto"
     },
     {
       "label": "CreatePostRequestDto",
@@ -5495,8 +5726,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "createpostrequestdto",
-      "id": "guide_openapi_createpostrequestdto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_createpostrequestdto"
     },
     {
       "label": "PreSignUploadResponseDto",
@@ -5509,8 +5740,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "presignuploadresponsedto",
-      "id": "guide_openapi_presignuploadresponsedto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_presignuploadresponsedto"
     },
     {
       "label": "PreSignUploadRequestDto",
@@ -5523,8 +5754,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "presignuploadrequestdto",
-      "id": "guide_openapi_presignuploadrequestdto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_presignuploadrequestdto"
     },
     {
       "label": "CommentResponseDto",
@@ -5535,10 +5766,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "commentresponsedto",
-      "id": "guide_openapi_commentresponsedto",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_commentresponsedto"
     },
     {
       "label": "CreateCommentRequestDto",
@@ -5549,10 +5780,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "createcommentrequestdto",
-      "id": "guide_openapi_createcommentrequestdto",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_createcommentrequestdto"
     },
     {
       "label": "DeleteCommentRequestDto",
@@ -5563,10 +5794,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "deletecommentrequestdto",
-      "id": "guide_openapi_deletecommentrequestdto",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_deletecommentrequestdto"
     },
     {
       "label": "CommentAuthorResponseDto",
@@ -5577,10 +5808,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "commentauthorresponsedto",
-      "id": "guide_openapi_commentauthorresponsedto",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_commentauthorresponsedto"
     },
     {
       "label": "CommentListItemResponseDto",
@@ -5591,10 +5822,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "commentlistitemresponsedto",
-      "id": "guide_openapi_commentlistitemresponsedto",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_commentlistitemresponsedto"
     },
     {
       "label": "NotificationActorResponseDto",
@@ -5605,10 +5836,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "notificationactorresponsedto",
-      "id": "guide_openapi_notificationactorresponsedto",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_notificationactorresponsedto"
     },
     {
       "label": "NotificationListItemResponseDto",
@@ -5619,10 +5850,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "notificationlistitemresponsedto",
-      "id": "guide_openapi_notificationlistitemresponsedto",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_notificationlistitemresponsedto"
     },
     {
       "label": "UnreadNotificationCountResponseDto",
@@ -5633,10 +5864,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 1,
       "norm_label": "unreadnotificationcountresponsedto",
-      "id": "guide_openapi_unreadnotificationcountresponsedto",
-      "community_name": "Comment API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_unreadnotificationcountresponsedto"
     },
     {
       "label": "ToggleLikeRequestDto",
@@ -5649,8 +5880,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "togglelikerequestdto",
-      "id": "guide_openapi_togglelikerequestdto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_togglelikerequestdto"
     },
     {
       "label": "ChatParticipantResponseDto",
@@ -5663,8 +5894,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "chatparticipantresponsedto",
-      "id": "guide_openapi_chatparticipantresponsedto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_chatparticipantresponsedto"
     },
     {
       "label": "ChatRoomResponseDto",
@@ -5677,8 +5908,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "chatroomresponsedto",
-      "id": "guide_openapi_chatroomresponsedto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_chatroomresponsedto"
     },
     {
       "label": "ChatMessageResponseDto",
@@ -5691,8 +5922,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "chatmessageresponsedto",
-      "id": "guide_openapi_chatmessageresponsedto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_chatmessageresponsedto"
     },
     {
       "label": "MarkChatAsReadRequestDto",
@@ -5705,8 +5936,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "markchatasreadrequestdto",
-      "id": "guide_openapi_markchatasreadrequestdto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_markchatasreadrequestdto"
     },
     {
       "label": "UnreadChatCountResponseDto",
@@ -5719,8 +5950,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "unreadchatcountresponsedto",
-      "id": "guide_openapi_unreadchatcountresponsedto",
-      "community_name": "Chat API Endpoints"
+      "community_name": "Chat API Endpoints",
+      "id": "guide_openapi_unreadchatcountresponsedto"
     },
     {
       "label": "File Icon (file.svg)",
@@ -5733,8 +5964,8 @@
       "contributor": null,
       "community": 24,
       "norm_label": "file icon (file.svg)",
-      "id": "public_file",
-      "community_name": "File Icon Asset"
+      "community_name": "File Icon Asset",
+      "id": "public_file"
     },
     {
       "label": "Globe Icon",
@@ -5747,8 +5978,8 @@
       "contributor": null,
       "community": 25,
       "norm_label": "globe icon",
-      "id": "public_globe_globeicon",
-      "community_name": "Globe Icon Asset"
+      "community_name": "Globe Icon Asset",
+      "id": "public_globe_globeicon"
     },
     {
       "label": "Next.js Wordmark Logo (SVG icon)",
@@ -5761,8 +5992,8 @@
       "contributor": null,
       "community": 26,
       "norm_label": "next.js wordmark logo (svg icon)",
-      "id": "public_next_nextlogo",
-      "community_name": "Next.js Logo Asset"
+      "community_name": "Next.js Logo Asset",
+      "id": "public_next_nextlogo"
     },
     {
       "label": "Vercel Logo (SVG)",
@@ -5775,8 +6006,8 @@
       "contributor": null,
       "community": 27,
       "norm_label": "vercel logo (svg)",
-      "id": "public_vercel_vercellogo",
-      "community_name": "Vercel Logo Asset"
+      "community_name": "Vercel Logo Asset",
+      "id": "public_vercel_vercellogo"
     },
     {
       "label": "Window Icon (window.svg)",
@@ -5789,8 +6020,8 @@
       "contributor": null,
       "community": 28,
       "norm_label": "window icon (window.svg)",
-      "id": "public_window_windowicon",
-      "community_name": "Window Icon Asset"
+      "community_name": "Window Icon Asset",
+      "id": "public_window_windowicon"
     }
   ],
   "links": [
@@ -6084,7 +6315,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package",
@@ -6205,7 +6436,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -6227,7 +6458,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -6238,7 +6469,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -6260,7 +6491,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -6271,7 +6502,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -6282,7 +6513,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -6293,7 +6524,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -6304,7 +6535,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -6315,7 +6546,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -6326,7 +6557,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -6337,7 +6568,29 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_tanstack_react_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_tanstack_react_query_devtools",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_dependencies",
@@ -6376,6 +6629,30 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
+      "source": "package_dependencies_tanstack_react_query",
+      "target": "tanstack_react_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast",
+      "source": "package_dependencies_tanstack_react_query_devtools",
+      "target": "tanstack_react_query_devtools",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast",
       "source": "package_dependencies_axios",
       "target": "axios",
       "confidence_score": 1.0
@@ -6384,7 +6661,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6396,7 +6673,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6408,7 +6685,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6420,7 +6697,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6432,7 +6709,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6444,7 +6721,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6504,7 +6781,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6516,7 +6793,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6528,7 +6805,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L27",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6540,7 +6817,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L28",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6552,7 +6829,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6563,7 +6840,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6574,7 +6851,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6585,7 +6862,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L43",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6596,7 +6873,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6607,7 +6884,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6618,7 +6895,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L48",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6629,7 +6906,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6640,7 +6917,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6651,7 +6928,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6662,7 +6939,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6673,7 +6950,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6684,7 +6961,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6695,7 +6972,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6706,7 +6983,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6717,7 +6994,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6728,7 +7005,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6739,7 +7016,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6750,7 +7027,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L49",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6761,7 +7038,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L50",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6772,7 +7049,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6783,7 +7060,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
       "source": "package_devdependencies",
@@ -6794,7 +7071,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6806,7 +7083,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6818,7 +7095,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L33",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6830,7 +7107,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L34",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6842,7 +7119,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L35",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6854,7 +7131,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6866,7 +7143,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L37",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6878,7 +7155,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L38",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6890,7 +7167,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L39",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6902,7 +7179,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L40",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6914,7 +7191,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L41",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6926,7 +7203,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L42",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6938,7 +7215,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6950,7 +7227,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6962,7 +7239,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L43",
+      "source_location": "L45",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6974,7 +7251,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6986,7 +7263,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -6998,7 +7275,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L48",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -7010,7 +7287,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L49",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -7022,7 +7299,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -7034,7 +7311,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L49",
+      "source_location": "L51",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -7046,7 +7323,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L50",
+      "source_location": "L52",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -7069,7 +7346,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(main)/profile/page.tsx",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_main_profile_page",
@@ -7080,11 +7357,35 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(main)/profile/page.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_main_profile_page",
       "target": "src_app_main_profile_page_profilepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(main)/profile/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_main_profile_page",
+      "target": "src_shared_constants_page_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(main)/profile/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_main_profile_page",
+      "target": "src_shared_constants_page_constant_pages",
       "confidence_score": 1.0
     },
     {
@@ -7230,7 +7531,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/auth/activate/page.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_auth_activate_page",
@@ -7241,7 +7542,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/auth/activate/page.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_auth_activate_page",
@@ -7273,14 +7574,62 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/auth/activate/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_auth_activate_page",
+      "target": "src_shared_constants_page_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/auth/activate/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_auth_activate_page",
+      "target": "src_shared_constants_page_constant_pages",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/auth/layout.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_auth_layout",
       "target": "src_app_auth_layout_authlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/auth/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_auth_layout",
+      "target": "src_shared_constants_page_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/auth/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_auth_layout",
+      "target": "src_shared_constants_page_constant_pages",
       "confidence_score": 1.0
     },
     {
@@ -7299,7 +7648,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/auth/login/page.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_auth_login_page",
@@ -7310,7 +7659,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/auth/login/page.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_auth_login_page",
@@ -7342,10 +7691,34 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/auth/login/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_auth_login_page",
+      "target": "src_shared_constants_page_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/auth/login/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_auth_login_page",
+      "target": "src_shared_constants_page_constant_pages",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/auth/register/page.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_auth_register_page",
@@ -7356,7 +7729,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/auth/register/page.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_auth_register_page",
@@ -7388,10 +7761,34 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/auth/register/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_auth_register_page",
+      "target": "src_shared_constants_page_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/auth/register/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_auth_register_page",
+      "target": "src_shared_constants_page_constant_pages",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_layout",
@@ -7402,7 +7799,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_layout",
@@ -7413,7 +7810,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_layout",
@@ -7424,11 +7821,35 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_layout",
       "target": "src_app_layout_rootlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_layout",
+      "target": "src_providers_query_client_provider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_layout",
+      "target": "src_providers_query_client_provider_queryprovider",
       "confidence_score": 1.0
     },
     {
@@ -7720,7 +8141,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/activate-form.tsx",
-      "source_location": "L195",
+      "source_location": "L199",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_activate_form_activateform",
@@ -7733,7 +8154,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/auth/components/activate-form.tsx",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_activate_form_activateform",
@@ -7743,7 +8164,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7754,7 +8175,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7766,7 +8187,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7778,7 +8199,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7790,7 +8211,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7802,7 +8223,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7814,7 +8235,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7826,7 +8247,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7838,7 +8259,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7850,7 +8271,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7862,7 +8283,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7874,7 +8295,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7886,7 +8307,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7898,7 +8319,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7910,7 +8331,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7922,7 +8343,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7934,7 +8355,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7946,7 +8367,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
@@ -7958,11 +8379,35 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form",
       "target": "src_shared_components_molecules_password_input_passwordinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/auth/components/login-form.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_auth_components_login_form",
+      "target": "src_shared_constants_page_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/auth/components/login-form.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_auth_components_login_form",
+      "target": "src_shared_constants_page_constant_pages",
       "confidence_score": 1.0
     },
     {
@@ -7971,7 +8416,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/auth/components/login-form.tsx",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_login_form_loginform",
@@ -7981,7 +8426,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/register-form.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_register_form",
@@ -7992,7 +8437,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/register-form.tsx",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_register_form",
@@ -8003,7 +8448,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/register-form.tsx",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_register_form",
@@ -8347,13 +8792,37 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/auth/components/register-form.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_auth_components_register_form",
+      "target": "src_shared_constants_page_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/auth/components/register-form.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_auth_components_register_form",
+      "target": "src_shared_constants_page_constant_pages",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/components/register-form.tsx",
-      "source_location": "L70",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_features_auth_components_register_form_rationale_70",
+      "source": "src_features_auth_components_register_form_rationale_71",
       "target": "src_features_auth_components_register_form",
       "confidence_score": 1.0
     },
@@ -8363,7 +8832,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/auth/components/register-form.tsx",
-      "source_location": "L49",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_components_register_form_registerform",
@@ -8373,7 +8842,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/hooks/use-activate.ts",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_activate",
@@ -8385,7 +8854,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/hooks/use-activate.ts",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_activate",
@@ -8397,7 +8866,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/hooks/use-activate.ts",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_activate",
@@ -8409,7 +8878,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/hooks/use-activate.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_activate",
@@ -8421,7 +8890,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/hooks/use-activate.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_activate",
@@ -8433,7 +8902,31 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/hooks/use-activate.ts",
-      "source_location": "L6",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_auth_hooks_use_activate",
+      "target": "src_shared_constants_page_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/auth/hooks/use-activate.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_auth_hooks_use_activate",
+      "target": "src_shared_constants_page_constant_pages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/auth/hooks/use-activate.ts",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_activate",
@@ -8445,7 +8938,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/hooks/use-activate.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_activate",
@@ -8458,7 +8951,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/auth/hooks/use-activate.ts",
-      "source_location": "L36",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_activate_useactivate",
@@ -8468,7 +8961,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/hooks/use-login.ts",
-      "source_location": "L10",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_login",
@@ -8528,11 +9021,47 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/hooks/use-login.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_auth_hooks_use_login",
+      "target": "src_shared_constants_page_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/auth/hooks/use-login.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_auth_hooks_use_login",
+      "target": "src_shared_constants_page_constant_pages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/auth/hooks/use-login.ts",
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_login",
       "target": "src_shared_libs_axios_error",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/auth/hooks/use-login.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_auth_hooks_use_login",
+      "target": "src_shared_libs_axios_error_getapierrorcode",
       "confidence_score": 1.0
     },
     {
@@ -8553,7 +9082,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/auth/hooks/use-login.ts",
-      "source_location": "L25",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_auth_hooks_use_login_uselogin",
+      "target": "src_shared_libs_axios_error_getapierrorcode"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/auth/hooks/use-login.ts",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_login_uselogin",
@@ -8563,7 +9104,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/auth/hooks/use-register.ts",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_register",
@@ -8628,6 +9169,30 @@
       "_origin": "ast",
       "source": "src_features_auth_hooks_use_register",
       "target": "src_features_auth_types_register_type_registerpayload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/auth/hooks/use-register.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_auth_hooks_use_register",
+      "target": "src_shared_constants_page_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/auth/hooks/use-register.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_auth_hooks_use_register",
+      "target": "src_shared_constants_page_constant_pages",
       "confidence_score": 1.0
     },
     {
@@ -9254,6 +9819,28 @@
       "_origin": "ast",
       "source": "src_features_auth_validations_register_validation",
       "target": "src_features_auth_validations_register_validation_registervalidationschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/query-client.provider.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_query_client_provider",
+      "target": "src_providers_query_client_provider_queryclientconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/query-client.provider.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_query_client_provider",
+      "target": "src_providers_query_client_provider_queryprovider",
       "confidence_score": 1.0
     },
     {
@@ -9943,6 +10530,17 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/shared/constants/page.constant.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_shared_constants_page_constant",
+      "target": "src_shared_constants_page_constant_pages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/shared/hocs/with-server-token.tsx",
       "source_location": "L9",
       "weight": 1.0,
@@ -9955,11 +10553,33 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/shared/libs/axios/client.ts",
-      "source_location": "L8",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_shared_libs_axios_client",
+      "target": "src_shared_libs_axios_client_axios",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/shared/libs/axios/client.ts",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_shared_libs_axios_client",
       "target": "src_shared_libs_axios_client_axiosclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/shared/libs/axios/client.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_shared_libs_axios_client",
+      "target": "src_shared_libs_axios_client_axiosrequestconfig",
       "confidence_score": 1.0
     },
     {
@@ -9977,7 +10597,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/shared/libs/axios/error.ts",
-      "source_location": "L11",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_shared_libs_axios_error",
+      "target": "src_shared_libs_axios_error_getapierrorcode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/shared/libs/axios/error.ts",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_shared_libs_axios_error",
@@ -11308,6 +11939,94 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": ".claude/docs/fe-build/2026-09-10-page-constants.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_docs_fe_build_2026_09_10_page_constants",
+      "target": "claude_docs_fe_build_2026_09_10_page_constants_khai_b\u00e1o_constant_pages_pathname_title_d\u00f9ng_cho_navigate_v\u00e0_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/docs/fe-build/2026-09-10-page-constants.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_docs_fe_build_2026_09_10_page_constants_khai_b\u00e1o_constant_pages_pathname_title_d\u00f9ng_cho_navigate_v\u00e0_metadata",
+      "target": "claude_docs_fe_build_2026_09_10_page_constants_1_constant_file_m\u1edbi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/docs/fe-build/2026-09-10-page-constants.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_docs_fe_build_2026_09_10_page_constants_khai_b\u00e1o_constant_pages_pathname_title_d\u00f9ng_cho_navigate_v\u00e0_metadata",
+      "target": "claude_docs_fe_build_2026_09_10_page_constants_2_\u00e1p_d\u1ee5ng_cho_metadata_s\u1eeda_file_c\u00f3_s\u1eb5n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/docs/fe-build/2026-09-10-page-constants.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_docs_fe_build_2026_09_10_page_constants_khai_b\u00e1o_constant_pages_pathname_title_d\u00f9ng_cho_navigate_v\u00e0_metadata",
+      "target": "claude_docs_fe_build_2026_09_10_page_constants_3_\u00e1p_d\u1ee5ng_cho_navigate_s\u1eeda_file_c\u00f3_s\u1eb5n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/docs/fe-build/2026-09-10-react-query-setup.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_docs_fe_build_2026_09_10_react_query_setup",
+      "target": "claude_docs_fe_build_2026_09_10_react_query_setup_c\u00e0i_\u0111\u1eb7t_c\u1ea5u_h\u00ecnh_react_query_\u00e1p_d\u1ee5ng_cho_auth_hooks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/docs/fe-build/2026-09-10-react-query-setup.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_docs_fe_build_2026_09_10_react_query_setup_c\u00e0i_\u0111\u1eb7t_c\u1ea5u_h\u00ecnh_react_query_\u00e1p_d\u1ee5ng_cho_auth_hooks",
+      "target": "claude_docs_fe_build_2026_09_10_react_query_setup_1_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/docs/fe-build/2026-09-10-react-query-setup.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_docs_fe_build_2026_09_10_react_query_setup_c\u00e0i_\u0111\u1eb7t_c\u1ea5u_h\u00ecnh_react_query_\u00e1p_d\u1ee5ng_cho_auth_hooks",
+      "target": "claude_docs_fe_build_2026_09_10_react_query_setup_2_logic",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/docs/fe-build/2026-09-10-react-query-setup.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_docs_fe_build_2026_09_10_react_query_setup_c\u00e0i_\u0111\u1eb7t_c\u1ea5u_h\u00ecnh_react_query_\u00e1p_d\u1ee5ng_cho_auth_hooks",
+      "target": "claude_docs_fe_build_2026_09_10_react_query_setup_3_kh\u00e1c",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": ".claude/skills/fe-build/SKILL.md",
       "source_location": "L6",
       "weight": 1.0,
@@ -12595,5 +13314,5 @@
       "source_file": "guide/openapi.yml"
     }
   ],
-  "built_at_commit": "dbaac983a782ddf98cbc2870664e9a9cf0b0bfcd"
+  "built_at_commit": "161d69ba36e3d8f5a87a0cd71873b377b0809508"
 }
