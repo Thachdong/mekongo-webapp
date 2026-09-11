@@ -11,14 +11,24 @@ const AUTH_COOKIE_OPTIONS = {
 };
 
 /**
- * Optimistic check (see Next.js authentication guide): presence of
- * accessToken is enough to let the request through. Real validity is
- * enforced by the backend on each API call and by axiosClient's 401
- * interceptor — proxy is not a full session-management solution.
+ * Reads the `exp` claim off a JWT without verifying its signature —
+ * the backend verifies on every API call, this is only to decide
+ * whether proxy should attempt a refresh before letting a request through.
  */
+function isTokenExpired(token: string): boolean {
+  try {
+    const payload = JSON.parse(
+      Buffer.from(token.split(".")[1], "base64url").toString("utf8"),
+    );
+    return !payload.exp || payload.exp * 1000 <= Date.now();
+  } catch {
+    return true;
+  }
+}
+
 export async function proxy(request: NextRequest) {
   const accessToken = request.cookies.get("accessToken")?.value;
-  if (accessToken) {
+  if (accessToken && !isTokenExpired(accessToken)) {
     return NextResponse.next();
   }
 

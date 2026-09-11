@@ -13,7 +13,6 @@ async function handler(
   const hasBody = !["GET", "HEAD"].includes(request.method);
 
   try {
-    console.log(`/${path.join("/")}${request.nextUrl.search}`);
     const response = await axiosServer.request({
       url: `/${path.join("/")}${request.nextUrl.search}`,
       method: request.method,
@@ -23,7 +22,6 @@ async function handler(
 
     return NextResponse.json(response.data, { status: response.status });
   } catch (error) {
-    console.log(error);
     if (axios.isAxiosError(error) && error.response) {
       return NextResponse.json(error.response.data, { status: error.response.status });
     }
