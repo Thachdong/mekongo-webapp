@@ -101,32 +101,34 @@ export function ActivateForm() {
       onSubmit={onSubmit}
       className="mx-auto flex w-full max-w-[420px] flex-col gap-6 rounded-lg border border-border p-3"
     >
-      <div className="flex flex-col items-center gap-2 text-center">
-        <h1 className="text-xl font-semibold text-foreground">Activate</h1>
-        {error ? (
-          <p role="alert" className="text-sm text-destructive">
-            {error}
-          </p>
+      <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-2 text-center">
+          <h1 className="text-xl font-semibold text-foreground">Activate</h1>
+          {error ? (
+            <p role="alert" className="text-sm text-destructive">
+              {error}
+            </p>
+          ) : null}
+        </div>
+
+        {!hasHandoff ? (
+          <Controller
+            control={control}
+            name="loginType"
+            render={({ field }) => (
+              <Toggle
+                value={[field.value]}
+                onValueChange={(values) => {
+                  if (values[0]) field.onChange(values[0]);
+                }}
+              >
+                <ToggleItem value="EMAIL">Email</ToggleItem>
+                <ToggleItem value="PHONE">Phone</ToggleItem>
+              </Toggle>
+            )}
+          />
         ) : null}
       </div>
-
-      {!hasHandoff ? (
-        <Controller
-          control={control}
-          name="loginType"
-          render={({ field }) => (
-            <Toggle
-              value={[field.value]}
-              onValueChange={(values) => {
-                if (values[0]) field.onChange(values[0]);
-              }}
-            >
-              <ToggleItem value="EMAIL">Email</ToggleItem>
-              <ToggleItem value="PHONE">Phone</ToggleItem>
-            </Toggle>
-          )}
-        />
-      ) : null}
 
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="identifier">

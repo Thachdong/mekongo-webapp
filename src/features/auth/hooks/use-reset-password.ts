@@ -19,6 +19,7 @@ export function useResetPassword() {
     onSuccess: (_data, payload) => {
       sessionStorageClient.set(RESET_PASSWORD_STORAGE_KEY, {
         identifier: payload.identifier,
+        loginType: payload.loginType,
       });
       router.push(PAGES.CHANGE_PASSWORD.pathname);
     },

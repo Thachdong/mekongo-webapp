@@ -1,4 +1,7 @@
+import type { RegisterType } from "@/features/auth/types/register.type";
+
 export type ResetPasswordFormValues = {
+  loginType: RegisterType;
   identifier: string;
 };
 
@@ -13,9 +16,10 @@ export type ResetPasswordResult = {
   otpExpiredAt: string;
 };
 
-/** sessionStorage key: hand-off {identifier} from reset-password → change-password without exposing it in the URL. */
+/** sessionStorage key: hand-off {identifier, loginType} from reset-password → change-password without exposing it in the URL. */
 export const RESET_PASSWORD_STORAGE_KEY = "auth:reset-password";
 
 export type ResetPasswordHandoff = {
   identifier: string;
+  loginType: RegisterType;
 };
