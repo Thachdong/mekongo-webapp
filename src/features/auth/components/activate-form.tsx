@@ -12,7 +12,7 @@ import { Label } from "@/shared-components/atoms/label";
 import { Toggle, ToggleItem } from "@/shared-components/atoms/toggle";
 import { CodeInput } from "@/shared-components/molecules/code-input";
 import { sessionStorageClient } from "@/shared-libs/storage/session-storage";
-import { useActivate } from "@/features/auth/hooks/use-activate";
+import { RESEND_COUNTDOWN_SECONDS, useActivate } from "@/features/auth/hooks/use-activate";
 import {
   ACTIVATION_STORAGE_KEY,
   type ActivateFormValues,
@@ -57,6 +57,7 @@ export function ActivateForm() {
     register,
     handleSubmit,
     reset,
+    setError,
     formState: { errors },
   } = useForm<ActivateFormValues>({
     resolver: joiResolver(activateValidationSchema),
@@ -77,8 +78,12 @@ export function ActivateForm() {
     // an effect so the first client render still matches the SSR markup.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setHasHandoff(true);
-    // handoff means register already triggered the first code send
-    startCountdown();
+    // handoff means register already triggered the first code send — the
+    // countdown continues from registeredAt, not a fresh full window.
+    const elapsedSeconds = Math.floor(
+      (Date.now() - new Date(stored.registeredAt).getTime()) / 1000,
+    );
+    startCountdown(Math.max(0, RESEND_COUNTDOWN_SECONDS - elapsedSeconds));
   }, [reset, startCountdown]);
 
   const loginType = useWatch({ control, name: "loginType" });
@@ -93,6 +98,19 @@ export function ActivateForm() {
   const onSubmit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
     void submitValidForm(event);
+  };
+
+  const onResendClick = () => {
+    if (!identifier.trim()) {
+      setError("identifier", {
+        type: "manual",
+        message:
+          loginType === "EMAIL" ? "Vui lòng nhập email" : "Vui lòng nhập số điện thoại",
+      });
+      identifierRef.current?.focus();
+      return;
+    }
+    void resend(identifier);
   };
 
   return (
@@ -192,8 +210,8 @@ export function ActivateForm() {
           <Button
             type="button"
             variant="link"
-            disabled={isResending || !identifier}
-            onClick={() => void resend(identifier)}
+            disabled={isResending}
+            onClick={onResendClick}
           >
             {isResending ? "Resending..." : "Resend code"}
           </Button>

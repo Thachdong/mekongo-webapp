@@ -6,12 +6,14 @@ export type ActivateFormValues = {
   code: string;
 };
 
-/** sessionStorage key: hand-off {identifier, loginType} from register → activate without exposing it in the URL. */
+/** sessionStorage key: hand-off {identifier, loginType, registeredAt} from register → activate without exposing it in the URL. */
 export const ACTIVATION_STORAGE_KEY = "auth:activation";
 
 export type ActivationHandoff = {
   identifier: string;
   loginType: RegisterType;
+  /** ISO timestamp of the successful register call — anchors the resend countdown on the activate page. */
+  registeredAt: string;
 };
 
 /** Payload for POST /auth/activate (ActivateRequestDto). */

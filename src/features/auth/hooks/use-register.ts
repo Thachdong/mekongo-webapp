@@ -19,6 +19,7 @@ export function useRegister() {
       sessionStorageClient.set(ACTIVATION_STORAGE_KEY, {
         identifier: payload.identifier,
         loginType: payload.loginType,
+        registeredAt: new Date().toISOString(),
       });
       router.push(PAGES.ACTIVATE.pathname);
     },

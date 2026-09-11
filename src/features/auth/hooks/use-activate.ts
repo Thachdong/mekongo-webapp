@@ -9,7 +9,7 @@ import { authRepository } from "@/features/auth/repositories/auth.repository";
 import type { ActivatePayload } from "@/features/auth/types/activate.type";
 import { PAGES } from "@/shared/constants/page.constant";
 
-const RESEND_COUNTDOWN_SECONDS = 5 * 60;
+export const RESEND_COUNTDOWN_SECONDS = 5 * 60;
 
 export function useActivate() {
   const router = useRouter();
@@ -24,9 +24,9 @@ export function useActivate() {
     return () => clearInterval(timer);
   }, [isCounting]);
 
-  const startCountdown = useCallback(() => {
-    setSecondsLeft(RESEND_COUNTDOWN_SECONDS);
-    setIsCounting(true);
+  const startCountdown = useCallback((seconds: number = RESEND_COUNTDOWN_SECONDS) => {
+    setSecondsLeft(seconds);
+    setIsCounting(seconds > 0);
   }, []);
 
   const activateMutation = useMutation({
