@@ -79,6 +79,12 @@ Next.js route handlers đóng vai trò BFF, xử lý authen bằng cookie (`acce
 - Component có tương tác data/repository (dù dùng UI atomic bên trong) đặt ở `features/<feature>/components`, không đặt trong `shared/components`.
 - UI base dựng bằng **shadcn** — thêm component qua shadcn CLI, tuỳ biến trong `shared/components/atoms` hoặc `molecules` tương ứng, không fork/copy tay từ nơi khác.
 
+### 8.1 SCSS
+
+- Ưu tiên Tailwind utility class trước. Chỉ dùng SCSS (`*.module.scss`, CSS Modules) khi Tailwind không diễn đạt được (selector phức tạp, keyframes dài, style phụ thuộc lẫn nhau nhiều dòng).
+- File `*.module.scss` đặt cạnh component dùng nó (`Component.tsx` + `Component.module.scss`), import class qua `styles.xxx`, không viết global class ngoài `app/globals.css`.
+- Không định nghĩa lại design token (màu, spacing, radius...) bằng SCSS variable — luôn lấy từ CSS variable đã khai báo ở `app/globals.css` (mục màu) qua `var(--tên-token)`.
+
 ## 9. Widgets — component dùng chung nhiều feature
 
 - Component có tương tác data/repository nhưng được dùng bởi **từ 2 feature trở lên** → đặt ở `widgets/<widget-name>`, không lặp lại trong từng feature.
@@ -87,30 +93,31 @@ Next.js route handlers đóng vai trò BFF, xử lý authen bằng cookie (`acce
 ## 10. Tổng hợp cấu trúc thư mục
 
 ```
-app/                         # Next.js routes (page + BFF route handlers)
-  api/
-    auth/login/route.ts       # 2.1 login route
-    proxy/[...path]/route.ts  # 2.3 proxy catch-all
-middleware.ts                 # 2.2 refresh-token middleware
-features/
-  <feature>/
+src/
+  app/                         # Next.js routes (page + BFF route handlers)
+    api/
+      auth/login/route.ts       # 2.1 login route
+      proxy/[...path]/route.ts  # 2.3 proxy catch-all
+  middleware.ts                 # 2.2 refresh-token middleware
+  features/
+    <feature>/
+      components/
+      repositories/
+      hooks/
+      types/
+      validations/
+  widgets/
+    <widget-name>/
+  shared/
     components/
-    repositories/
+      atoms/
+      molecules/
+      organisms/
     hooks/
+    libs/                        # wrap external packages (axios, socket, sdk...)
     types/
-    validations/
-widgets/
-  <widget-name>/
-shared/
-  components/
-    atoms/
-    molecules/
-    organisms/
-  hooks/
-  libs/                        # wrap external packages (axios, socket, sdk...)
-  types/
-  utils/
-providers/
+    utils/
+  providers/
 ```
 
 Mọi thay đổi kiến trúc lệch khỏi tài liệu này cần cập nhật lại file này trước, không code lệch rồi để tài liệu lỗi thời.

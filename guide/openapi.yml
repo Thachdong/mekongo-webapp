@@ -1,0 +1,3322 @@
+openapi: 3.0.0
+paths:
+  /:
+    get:
+      operationId: AppController_getHello
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - App
+  /account:
+    get:
+      operationId: AccountController_getAccount
+      parameters: []
+      responses:
+        '200':
+          description: Thông tin account
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/AccountResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '404':
+          description: Account không tồn tại
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: ACCOUNT_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Lấy thông tin account đang đăng nhập
+      tags: &ref_0
+        - account
+  /account/change-password:
+    post:
+      operationId: AccountController_changePassword
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeOwnPasswordRequestDto'
+      responses:
+        '200':
+          description: Đổi mật khẩu thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: oldPassword không khớp mật khẩu hiện tại
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  code:
+                    type: string
+                    example: INVALID_CURRENT_PASSWORD
+                  message:
+                    type: string
+                    example: Current password is incorrect
+                  extra:
+                    type: object
+                    nullable: true
+        '404':
+          description: Không tìm thấy account
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: ACCOUNT_NOT_FOUND
+                  message:
+                    type: string
+                    example: Account not found
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Đổi mật khẩu account đang đăng nhập
+      tags: *ref_0
+  /account/update:
+    put:
+      operationId: AccountController_updateProfile
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAccountProfileRequestDto'
+      responses:
+        '200':
+          description: Cập nhật profile thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: >-
+            Validation failed — thiếu profileId/không phải UUID, hoặc thiếu cả
+            displayName và avatarUrl, hoặc field sai kiểu
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '404':
+          description: >-
+            Không tìm thấy account, hoặc profileId không tồn tại/không thuộc
+            account đang gọi, hoặc avatarUrl không phải file hợp lệ trong TMP
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    enum:
+                      - ACCOUNT_NOT_FOUND
+                      - PROFILE_NOT_FOUND
+                      - AVATAR_SOURCE_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: >-
+        Cập nhật displayName/avatarUrl của 1 profile thuộc account đang đăng
+        nhập
+      tags: *ref_0
+  /account/address:
+    get:
+      operationId: AccountController_getAddresses
+      parameters: []
+      responses:
+        '200':
+          description: Danh sách address của account
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AddressResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Lấy danh sách address của account đang đăng nhập
+      tags: *ref_0
+    post:
+      operationId: AccountController_createAddress
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAddressRequestDto'
+      responses:
+        '201':
+          description: Tạo address thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/AddressResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed — thiếu field hoặc sai kiểu
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Tạo address mới cho account đang đăng nhập
+      tags: *ref_0
+    delete:
+      operationId: AccountController_deleteAddress
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteAddressRequestDto'
+      responses:
+        '200':
+          description: Xoá address thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed — addressId thiếu hoặc không phải UUID
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '404':
+          description: Address không tồn tại/không thuộc account đang gọi
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: ADDRESS_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '409':
+          description: Address đang được gán làm addressId của 1 profile, không thể xoá
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 409
+                  code:
+                    type: string
+                    example: ADDRESS_ASSIGNED_TO_PROFILE
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Xoá address của account đang đăng nhập
+      tags: *ref_0
+  /account/set-profile-address:
+    put:
+      operationId: AccountController_setProfileAddress
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetProfileAddressRequestDto'
+      responses:
+        '200':
+          description: Gán address cho profile thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed — profileId/addressId thiếu hoặc không phải UUID
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '404':
+          description: >-
+            Profile không tồn tại/không thuộc account đang gọi, hoặc address
+            không tồn tại/không thuộc account đang gọi
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    enum:
+                      - PROFILE_NOT_FOUND
+                      - ADDRESS_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Gán 1 address có sẵn của account cho 1 profile
+      tags: *ref_0
+  /account/profile:
+    post:
+      operationId: AccountController_createProfile
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateProfileRequestDto'
+      responses:
+        '201':
+          description: Tạo profile thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/ProfileResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: >-
+            Validation failed (profileType thiếu/không hợp lệ, hoặc
+            addressId/newAddress sai format) HOẶC không truyền đúng 1 trong 2
+            field addressId/newAddress (code INVALID_PROFILE_ADDRESS_INPUT)
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - properties:
+                      statusCode:
+                        type: number
+                        example: 400
+                      message:
+                        type: array
+                        items:
+                          type: string
+                      error:
+                        type: string
+                        example: Bad Request
+                  - properties:
+                      statusCode:
+                        type: number
+                        example: 400
+                      code:
+                        type: string
+                        example: INVALID_PROFILE_ADDRESS_INPUT
+                      message:
+                        type: string
+                      extra:
+                        type: object
+                        nullable: true
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '404':
+          description: addressId truyền vào không thuộc về account đang đăng nhập
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: ADDRESS_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '409':
+          description: Account đã có profile với profileType này
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 409
+                  code:
+                    type: string
+                    example: DUPLICATE_PROFILE_TYPE
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '422':
+          description: Account đã đạt giới hạn tối đa 3 profile
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 422
+                  code:
+                    type: string
+                    example: MAX_PROFILE_LIMIT_REACHED
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Tạo profile mới cho account đang đăng nhập
+      tags: *ref_0
+    get:
+      operationId: AccountController_getProfiles
+      parameters: []
+      responses:
+        '200':
+          description: Danh sách profile
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ProfileResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Lấy danh sách profile của account đang đăng nhập
+      tags: *ref_0
+  /account/set-active-profile:
+    put:
+      operationId: AccountController_setActiveProfile
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetActiveProfileRequestDto'
+      responses:
+        '200':
+          description: Set active profile thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed — profileId thiếu hoặc không phải UUID
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '404':
+          description: >-
+            Profile không tồn tại/không thuộc account đang gọi, hoặc account
+            không tồn tại
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    enum:
+                      - PROFILE_NOT_FOUND
+                      - ACCOUNT_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Set activeProfileId của account đang đăng nhập
+      tags: *ref_0
+  /auth/register:
+    post:
+      operationId: AuthController_register
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequestDto'
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/RegisterResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Đăng ký account mới
+      tags: &ref_1
+        - auth
+  /auth/activate:
+    post:
+      operationId: AuthController_activate
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivateRequestDto'
+      responses:
+        '200':
+          description: Xác thực thành công, account được kích hoạt
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: >-
+            Account không ở trạng thái PENDING_FOR_VERIFICATION nên không thể
+            kích hoạt
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  code:
+                    type: string
+                    example: INVALID_ACCOUNT_STATUS_TRANSITION
+                  message:
+                    type: string
+                    example: >-
+                      Cannot transition account status from
+                      PENDING_FOR_VERIFICATION to ACTIVE
+                  extra:
+                    type: object
+                    nullable: true
+        '403':
+          description: OTP đang bị block do nhập sai quá số lần cho phép
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 403
+                  code:
+                    type: string
+                    example: OTP_BLOCKED
+                  message:
+                    type: string
+                    example: OTP is blocked
+                  extra:
+                    type: object
+                    properties:
+                      blockUntil:
+                        type: string
+                        format: date-time
+        '404':
+          description: Không tìm thấy account
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: ACCOUNT_NOT_FOUND
+                  message:
+                    type: string
+                    example: Account not found
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Xác thực OTP và kích hoạt account
+      tags: *ref_1
+  /auth/reset-password:
+    post:
+      operationId: AuthController_resetPassword
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResetPasswordRequestDto'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/ResetPasswordResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '404':
+          description: Không tìm thấy account
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: ACCOUNT_NOT_FOUND
+                  message:
+                    type: string
+                    example: Account not found
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Yêu cầu OTP để đặt lại mật khẩu
+      tags: *ref_1
+  /auth/change-password:
+    post:
+      operationId: AuthController_changePassword
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangePasswordRequestDto'
+      responses:
+        '200':
+          description: Đổi mật khẩu thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: OTP code không khớp
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  code:
+                    type: string
+                    example: OTP_CODE_INVALID
+                  message:
+                    type: string
+                    example: OTP code is invalid
+                  extra:
+                    type: object
+                    nullable: true
+        '403':
+          description: OTP đang bị block do nhập sai quá số lần cho phép
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 403
+                  code:
+                    type: string
+                    example: OTP_BLOCKED
+                  message:
+                    type: string
+                    example: OTP is blocked
+                  extra:
+                    type: object
+                    properties:
+                      blockUntil:
+                        type: string
+                        format: date-time
+        '404':
+          description: Không tìm thấy account
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: ACCOUNT_NOT_FOUND
+                  message:
+                    type: string
+                    example: Account not found
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Xác thực OTP và đổi mật khẩu
+      tags: *ref_1
+  /auth/login:
+    post:
+      operationId: AuthController_login
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequestDto'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/LoginResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Sai identifier hoặc password
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  code:
+                    type: string
+                    example: INVALID_CREDENTIALS
+                  message:
+                    type: string
+                    example: Invalid credentials
+                  extra:
+                    type: object
+                    nullable: true
+        '403':
+          description: Account đang bị block
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 403
+                  code:
+                    type: string
+                    example: ACCOUNT_BLOCKED
+                  message:
+                    type: string
+                    example: Account is blocked
+                  extra:
+                    type: object
+                    properties:
+                      blockUntil:
+                        type: string
+                        format: date-time
+        '404':
+          description: Không tìm thấy account
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: ACCOUNT_NOT_FOUND
+                  message:
+                    type: string
+                    example: Account not found
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      summary: Đăng nhập bằng identifier + password
+      tags: *ref_1
+  /auth/refresh:
+    post:
+      operationId: AuthController_refresh
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefreshTokenRequestDto'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/RefreshTokenResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: >-
+            Thiếu/sai access token (Authorization header), hoặc refresh token
+            không tồn tại/đã bị revoke/đã hết hạn
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  code:
+                    type: string
+                    example: >-
+                      REFRESH_TOKEN_NOT_FOUND | REFRESH_TOKEN_REVOKED |
+                      REFRESH_TOKEN_EXPIRED
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Cấp lại accessToken + refreshToken mới từ refreshToken hiện có
+      tags: *ref_1
+  /auth/logout:
+    post:
+      operationId: AuthController_logout
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LogoutRequestDto'
+      responses:
+        '200':
+          description: >-
+            Đăng xuất thành công (idempotent — kể cả refreshToken không tồn
+            tại/đã revoke)
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Thu hồi refresh token của session hiện tại
+      tags: *ref_1
+  /auth/ws-token:
+    post:
+      operationId: AuthController_issueWsToken
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/WsTokenResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: >-
+        Cấp JWT riêng (wsToken) dùng để authenticate WebSocket gateway
+        (chat/notification/comment), tách biệt khỏi accessToken
+      tags: *ref_1
+  /verification/re-send:
+    post:
+      operationId: VerificationController_reSend
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReSendRequestDto'
+      responses:
+        '200':
+          description: ''
+      tags:
+        - verification
+  /posts:
+    post:
+      operationId: PostController_create
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePostRequestDto'
+      responses:
+        '201':
+          description: Tạo bài đăng thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/PostResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed — thiếu field hoặc sai kiểu
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '404':
+          description: >-
+            Account không tồn tại (ACCOUNT_NOT_FOUND), account chưa có địa chỉ
+            hiện tại (CURRENT_ADDRESS_NOT_FOUND), hoặc ảnh trong TMP không hợp
+            lệ/đã hết hạn (POST_IMAGE_SOURCE_INVALID)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    enum:
+                      - ACCOUNT_NOT_FOUND
+                      - CURRENT_ADDRESS_NOT_FOUND
+                      - POST_IMAGE_SOURCE_INVALID
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '422':
+          description: Account chưa có hồ sơ (profile) hoạt động
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 422
+                  code:
+                    type: string
+                    example: PROFILE_NOT_ACTIVE
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Tạo bài đăng mới cho account đang đăng nhập
+      tags:
+        - post
+  /uploads/pre-sign-url:
+    post:
+      operationId: UploadController_preSignUpload
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PreSignUploadRequestDto'
+      responses:
+        '200':
+          description: Sinh presign URL thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/PreSignUploadResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed — thiếu field hoặc sai kiểu
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Sinh TMP object key + signed upload URL cho danh sách file
+      tags:
+        - upload
+  /comments:
+    post:
+      operationId: CommentController_create
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCommentRequestDto'
+      responses:
+        '201':
+          description: Tạo comment thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CommentResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed — thiếu field hoặc sai kiểu
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '404':
+          description: >-
+            Post không tồn tại (POST_NOT_FOUND), hoặc parentId không tồn
+            tại/không thuộc post này (PARENT_COMMENT_NOT_FOUND)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    enum:
+                      - POST_NOT_FOUND
+                      - PARENT_COMMENT_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '422':
+          description: >-
+            Account chưa có hồ sơ (profile) hoạt động (PROFILE_NOT_ACTIVE), hoặc
+            độ sâu reply đã đạt giới hạn tối đa (COMMENT_LEVEL_LIMIT_EXCEEDED)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 422
+                  code:
+                    type: string
+                    enum:
+                      - PROFILE_NOT_ACTIVE
+                      - COMMENT_LEVEL_LIMIT_EXCEEDED
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Tạo comment mới cho 1 post (hoặc reply 1 comment khác)
+      tags: &ref_2
+        - comment
+    delete:
+      operationId: CommentController_delete
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteCommentRequestDto'
+      responses:
+        '200':
+          description: Xóa comment thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed — commentId thiếu hoặc không phải UUID
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '403':
+          description: Không phải chủ comment này
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 403
+                  code:
+                    type: string
+                    example: FORBIDDEN_COMMENT_DELETION
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '404':
+          description: Comment không tồn tại
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: COMMENT_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '422':
+          description: >-
+            Account chưa có hồ sơ hoạt động (PROFILE_NOT_ACTIVE), hoặc comment
+            còn phản hồi chưa xóa hết (COMMENT_HAS_CHILDREN)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 422
+                  code:
+                    type: string
+                    enum:
+                      - PROFILE_NOT_ACTIVE
+                      - COMMENT_HAS_CHILDREN
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Xóa comment của chính mình (chỉ khi chưa có phản hồi)
+      tags: *ref_2
+    get:
+      operationId: CommentController_getComments
+      parameters:
+        - name: postId
+          required: true
+          in: query
+          schema:
+            type: string
+        - name: page
+          required: false
+          in: query
+          schema:
+            default: 1
+            type: number
+        - name: limit
+          required: false
+          in: query
+          schema:
+            default: 20
+            type: number
+      responses:
+        '200':
+          description: Danh sách comment gốc, kèm số lượng comment con
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CommentListItemResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed — postId thiếu hoặc page/limit sai kiểu
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Lấy danh sách comment gốc (level 0) của 1 post, có phân trang
+      tags: *ref_2
+  /comments/{parentId}/children:
+    get:
+      operationId: CommentController_getCommentChildren
+      parameters:
+        - name: parentId
+          required: true
+          in: path
+          schema:
+            type: string
+        - name: postId
+          required: true
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Danh sách comment con trực tiếp (không phân trang)
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CommentListItemResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed — postId thiếu
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '404':
+          description: >-
+            Comment cha không tồn tại hoặc không thuộc post này
+            (PARENT_COMMENT_NOT_FOUND)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: PARENT_COMMENT_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Lấy danh sách comment con trực tiếp (1 cấp) của 1 comment cha
+      tags: *ref_2
+  /notifications:
+    get:
+      operationId: NotificationController_getNotifications
+      parameters:
+        - name: page
+          required: false
+          in: query
+          schema:
+            default: 1
+            type: number
+        - name: limit
+          required: false
+          in: query
+          schema:
+            default: 20
+            type: number
+      responses:
+        '200':
+          description: Danh sách thông báo, sắp xếp theo thời gian giảm dần
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/NotificationListItemResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed (page/limit sai kiểu hoặc ngoài khoảng)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+      security:
+        - access-token: []
+      summary: Lấy danh sách thông báo của user hiện tại, có phân trang
+      tags: &ref_3
+        - notification
+  /notifications/unread-count:
+    get:
+      operationId: NotificationController_getUnreadCount
+      parameters: []
+      responses:
+        '200':
+          description: Số thông báo chưa đọc
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/UnreadNotificationCountResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+      security:
+        - access-token: []
+      summary: >-
+        Lấy số lượng thông báo chưa đọc của user hiện tại (dùng cho badge icon
+        notification)
+      tags: *ref_3
+  /notifications/{id}/read:
+    post:
+      operationId: NotificationController_markAsRead
+      parameters:
+        - name: id
+          required: true
+          in: path
+          description: Notification id
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Đánh dấu đã đọc thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '404':
+          description: >-
+            Thông báo không tồn tại hoặc không thuộc về user hiện tại
+            (NOTIFICATION_NOT_FOUND)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: NOTIFICATION_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+      security:
+        - access-token: []
+      summary: Đánh dấu 1 thông báo đã đọc
+      tags: *ref_3
+  /notifications/read-all:
+    post:
+      operationId: NotificationController_markAllAsRead
+      parameters: []
+      responses:
+        '200':
+          description: Đánh dấu tất cả đã đọc thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+      security:
+        - access-token: []
+      summary: Đánh dấu tất cả thông báo của user hiện tại đã đọc
+      tags: *ref_3
+  /likes:
+    post:
+      operationId: LikeController_toggle
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ToggleLikeRequestDto'
+      responses:
+        '200':
+          description: Toggle like/unlike thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: Validation failed — postId thiếu hoặc không phải UUID
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  message:
+                    type: array
+                    items:
+                      type: string
+                  error:
+                    type: string
+                    example: Bad Request
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '404':
+          description: Post không tồn tại
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: POST_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: 'Toggle like/unlike 1 post: chưa like thì tạo like, đã like thì bỏ like'
+      tags:
+        - like
+  /chats/rooms:
+    get:
+      operationId: ChatController_getRooms
+      parameters: []
+      responses:
+        '200':
+          description: Danh sách room, kèm thông tin đối phương và tin nhắn gần nhất
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ChatRoomResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: >-
+        Lấy danh sách room chat của tôi (cả khi tôi là chủ post lẫn khi tôi là
+        người nhắn tin), sắp xếp theo tin nhắn mới nhất
+      tags: &ref_4
+        - chat
+  /chats/messages:
+    get:
+      operationId: ChatController_getMessages
+      parameters:
+        - name: postId
+          required: true
+          in: query
+          schema:
+            type: string
+        - name: buyerProfileId
+          required: true
+          in: query
+          schema:
+            type: string
+        - name: page
+          required: false
+          in: query
+          schema:
+            default: 1
+            type: number
+        - name: limit
+          required: false
+          in: query
+          schema:
+            default: 20
+            type: number
+      responses:
+        '200':
+          description: Danh sách tin nhắn của room, sắp xếp theo thời gian tăng dần
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ChatMessageResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '400':
+          description: >-
+            Validation failed (thiếu postId/buyerProfileId hoặc page/limit sai
+            kiểu), hoặc chủ post tự nhắn tin với chính mình
+            (SELF_CHAT_NOT_ALLOWED)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  code:
+                    type: string
+                    enum:
+                      - SELF_CHAT_NOT_ALLOWED
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '403':
+          description: >-
+            Người gọi không phải chủ post cũng không phải người nhắn tin của
+            room này (CHAT_PARTICIPANT_FORBIDDEN)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 403
+                  code:
+                    type: string
+                    example: CHAT_PARTICIPANT_FORBIDDEN
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '404':
+          description: Post không tồn tại (POST_NOT_FOUND)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: POST_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Lấy lịch sử tin nhắn của 1 room (postId + buyerProfileId), có phân trang
+      tags: *ref_4
+  /chats/rooms/read:
+    post:
+      operationId: ChatController_markRoomAsRead
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarkChatAsReadRequestDto'
+      responses:
+        '200':
+          description: Đánh dấu đã đọc thành công
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+                    example: null
+        '400':
+          description: >-
+            Validation failed (thiếu postId/buyerProfileId), hoặc chủ post tự
+            nhắn tin với chính mình (SELF_CHAT_NOT_ALLOWED)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 400
+                  code:
+                    type: string
+                    enum:
+                      - SELF_CHAT_NOT_ALLOWED
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+        '403':
+          description: >-
+            Người gọi không phải chủ post cũng không phải người nhắn tin của
+            room này (CHAT_PARTICIPANT_FORBIDDEN)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 403
+                  code:
+                    type: string
+                    example: CHAT_PARTICIPANT_FORBIDDEN
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '404':
+          description: Post không tồn tại (POST_NOT_FOUND)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 404
+                  code:
+                    type: string
+                    example: POST_NOT_FOUND
+                  message:
+                    type: string
+                  extra:
+                    type: object
+                    nullable: true
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+      security:
+        - access-token: []
+      summary: Đánh dấu 1 room (postId + buyerProfileId) đã đọc đến thời điểm hiện tại
+      tags: *ref_4
+  /chats/unread-count:
+    get:
+      operationId: ChatController_getUnreadCount
+      parameters: []
+      responses:
+        '200':
+          description: Số room có tin nhắn chưa đọc
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    $ref: '#/components/schemas/UnreadChatCountResponseDto'
+                  meta:
+                    type: object
+                    additionalProperties: true
+                    nullable: true
+        '401':
+          description: Thiếu/sai/hết hạn access token (Authorization header)
+          content:
+            application/json:
+              schema:
+                properties:
+                  statusCode:
+                    type: number
+                    example: 401
+                  message:
+                    type: string
+      security:
+        - access-token: []
+      summary: >-
+        Lấy số lượng room có tin nhắn chưa đọc của user hiện tại (dùng cho badge
+        icon chat)
+      tags: *ref_4
+info:
+  title: Mekongo API
+  description: Mekongo v4 API documentation
+  version: 0.0.1
+  contact: {}
+tags: []
+servers: []
+components:
+  securitySchemes:
+    access-token:
+      scheme: bearer
+      bearerFormat: JWT
+      type: http
+  schemas:
+    AccountResponseDto:
+      type: object
+      properties:
+        id:
+          type: string
+        loginType:
+          type: string
+        status:
+          type: string
+        activeProfileId:
+          type: string
+          nullable: true
+        blockUntil:
+          type: string
+          format: date-time
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+          nullable: true
+        updatedAt:
+          type: string
+          format: date-time
+          nullable: true
+      required:
+        - id
+        - loginType
+        - status
+        - activeProfileId
+        - blockUntil
+        - createdAt
+        - updatedAt
+    ChangeOwnPasswordRequestDto:
+      type: object
+      properties:
+        oldPassword:
+          type: string
+        newPassword:
+          type: string
+      required:
+        - oldPassword
+        - newPassword
+    UpdateAccountProfileRequestDto:
+      type: object
+      properties:
+        profileId:
+          type: string
+        displayName:
+          type: string
+        avatarUrl:
+          type: string
+      required:
+        - profileId
+    AddressResponseDto:
+      type: object
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        province:
+          type: string
+        provinceCode:
+          type: number
+        ward:
+          type: string
+        details:
+          type: string
+        profileId:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+          nullable: true
+        updatedAt:
+          type: string
+          format: date-time
+          nullable: true
+      required:
+        - id
+        - label
+        - province
+        - provinceCode
+        - ward
+        - details
+        - profileId
+        - createdAt
+        - updatedAt
+    SetProfileAddressRequestDto:
+      type: object
+      properties:
+        profileId:
+          type: string
+        addressId:
+          type: string
+      required:
+        - profileId
+        - addressId
+    CreateAddressRequestDto:
+      type: object
+      properties:
+        label:
+          type: string
+        province:
+          type: string
+        provinceCode:
+          type: number
+        ward:
+          type: string
+        details:
+          type: string
+        profileId:
+          type: string
+      required:
+        - label
+        - province
+        - provinceCode
+        - ward
+        - details
+    DeleteAddressRequestDto:
+      type: object
+      properties:
+        addressId:
+          type: string
+      required:
+        - addressId
+    ProfileResponseDto:
+      type: object
+      properties:
+        id:
+          type: string
+        profileType:
+          type: string
+          enum:
+            - INDIVIDUAL
+            - DISTRIBUTOR
+            - FACTORY
+        accountId:
+          type: string
+        displayName:
+          type: string
+        avatarUrl:
+          type: string
+          nullable: true
+        addressId:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+          nullable: true
+        updatedAt:
+          type: string
+          format: date-time
+          nullable: true
+      required:
+        - id
+        - profileType
+        - accountId
+        - displayName
+        - avatarUrl
+        - addressId
+        - createdAt
+        - updatedAt
+    CreateProfileNewAddressDto:
+      type: object
+      properties:
+        label:
+          type: string
+        province:
+          type: string
+        provinceCode:
+          type: number
+        ward:
+          type: string
+        details:
+          type: string
+      required:
+        - label
+        - province
+        - provinceCode
+        - ward
+        - details
+    CreateProfileRequestDto:
+      type: object
+      properties:
+        profileType:
+          type: string
+          enum:
+            - INDIVIDUAL
+            - DISTRIBUTOR
+            - FACTORY
+        addressId:
+          type: string
+        newAddress:
+          $ref: '#/components/schemas/CreateProfileNewAddressDto'
+      required:
+        - profileType
+    SetActiveProfileRequestDto:
+      type: object
+      properties:
+        profileId:
+          type: string
+      required:
+        - profileId
+    RegisterResponseDto:
+      type: object
+      properties:
+        accountId:
+          type: string
+        otpId:
+          type: string
+        otpExpiredAt:
+          type: string
+          format: date-time
+      required:
+        - accountId
+        - otpId
+        - otpExpiredAt
+    RegisterRequestDto:
+      type: object
+      properties:
+        loginType:
+          type: string
+          enum:
+            - EMAIL
+            - PHONE
+        identifier:
+          type: string
+        password:
+          type: string
+        profileType:
+          type: string
+          enum:
+            - INDIVIDUAL
+            - DISTRIBUTOR
+            - FACTORY
+        label:
+          type: string
+        province:
+          type: string
+        provinceCode:
+          type: number
+        ward:
+          type: string
+        details:
+          type: string
+      required:
+        - loginType
+        - identifier
+        - password
+        - profileType
+        - label
+        - province
+        - provinceCode
+        - ward
+        - details
+    ActivateRequestDto:
+      type: object
+      properties:
+        identifier:
+          type: string
+        code:
+          type: string
+      required:
+        - identifier
+        - code
+    ResetPasswordResponseDto:
+      type: object
+      properties:
+        otpId:
+          type: string
+        otpExpiredAt:
+          type: string
+          format: date-time
+      required:
+        - otpId
+        - otpExpiredAt
+    ResetPasswordRequestDto:
+      type: object
+      properties:
+        identifier:
+          type: string
+      required:
+        - identifier
+    ChangePasswordRequestDto:
+      type: object
+      properties:
+        identifier:
+          type: string
+        code:
+          type: string
+        password:
+          type: string
+      required:
+        - identifier
+        - code
+        - password
+    LoginResponseDto:
+      type: object
+      properties:
+        accessToken:
+          type: string
+        refreshToken:
+          type: string
+        accountId:
+          type: string
+        profileId:
+          type: string
+          nullable: true
+      required:
+        - accessToken
+        - refreshToken
+        - accountId
+        - profileId
+    LoginRequestDto:
+      type: object
+      properties:
+        loginType:
+          type: string
+          enum:
+            - EMAIL
+            - PHONE
+        identifier:
+          type: string
+        password:
+          type: string
+      required:
+        - loginType
+        - identifier
+        - password
+    RefreshTokenResponseDto:
+      type: object
+      properties:
+        accessToken:
+          type: string
+        refreshToken:
+          type: string
+      required:
+        - accessToken
+        - refreshToken
+    RefreshTokenRequestDto:
+      type: object
+      properties:
+        refreshToken:
+          type: string
+      required:
+        - refreshToken
+    LogoutRequestDto:
+      type: object
+      properties:
+        refreshToken:
+          type: string
+      required:
+        - refreshToken
+    WsTokenResponseDto:
+      type: object
+      properties:
+        wsToken:
+          type: string
+      required:
+        - wsToken
+    ReSendRequestDto:
+      type: object
+      properties:
+        identifier:
+          type: string
+        purpose:
+          type: string
+          enum:
+            - ACCOUNT_VERIFICATION
+            - RESET_PASSWORD
+      required:
+        - identifier
+        - purpose
+    PostResponseDto:
+      type: object
+      properties:
+        id:
+          type: string
+        postType:
+          type: string
+        title:
+          type: string
+        content:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+        provinceCode:
+          type: number
+        profileId:
+          type: string
+        likeCount:
+          type: number
+        commentCount:
+          type: number
+        createdAt:
+          type: string
+          format: date-time
+          nullable: true
+        updatedAt:
+          type: string
+          format: date-time
+          nullable: true
+      required:
+        - id
+        - postType
+        - title
+        - content
+        - images
+        - provinceCode
+        - profileId
+        - likeCount
+        - commentCount
+        - createdAt
+        - updatedAt
+    CreatePostRequestDto:
+      type: object
+      properties:
+        postType:
+          type: string
+          enum:
+            - BUY
+            - SELL
+        title:
+          type: string
+        content:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+      required:
+        - postType
+        - title
+        - content
+        - images
+    PreSignUploadResponseDto:
+      type: object
+      properties:
+        keys:
+          type: array
+          items:
+            type: string
+        presignUrls:
+          type: array
+          items:
+            type: string
+      required:
+        - keys
+        - presignUrls
+    PreSignUploadRequestDto:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            type: string
+      required:
+        - files
+    CommentResponseDto:
+      type: object
+      properties:
+        id:
+          type: string
+        content:
+          type: string
+        parentId:
+          type: string
+          nullable: true
+        postId:
+          type: string
+        profileId:
+          type: string
+        level:
+          type: number
+        createdAt:
+          type: string
+          format: date-time
+          nullable: true
+        updatedAt:
+          type: string
+          format: date-time
+          nullable: true
+      required:
+        - id
+        - content
+        - parentId
+        - postId
+        - profileId
+        - level
+        - createdAt
+        - updatedAt
+    CreateCommentRequestDto:
+      type: object
+      properties:
+        content:
+          type: string
+        parentId:
+          type: string
+        postId:
+          type: string
+      required:
+        - content
+        - postId
+    DeleteCommentRequestDto:
+      type: object
+      properties:
+        commentId:
+          type: string
+      required:
+        - commentId
+    CommentAuthorResponseDto:
+      type: object
+      properties:
+        profileId:
+          type: string
+        displayName:
+          type: string
+          nullable: true
+        avatarUrl:
+          type: string
+          nullable: true
+      required:
+        - profileId
+        - displayName
+        - avatarUrl
+    CommentListItemResponseDto:
+      type: object
+      properties:
+        id:
+          type: string
+        content:
+          type: string
+        level:
+          type: number
+        parentId:
+          type: string
+          nullable: true
+        childrenCount:
+          type: number
+          description: Số lượng comment con trực tiếp — chỉ có ở danh sách root
+        author:
+          $ref: '#/components/schemas/CommentAuthorResponseDto'
+      required:
+        - id
+        - content
+        - level
+        - parentId
+        - author
+    NotificationActorResponseDto:
+      type: object
+      properties:
+        profileId:
+          type: string
+        displayName:
+          type: string
+          nullable: true
+        avatarUrl:
+          type: string
+          nullable: true
+      required:
+        - profileId
+        - displayName
+        - avatarUrl
+    NotificationListItemResponseDto:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+            - NEW_COMMENT
+            - NEW_REPLY
+        actor:
+          $ref: '#/components/schemas/NotificationActorResponseDto'
+        postId:
+          type: string
+        commentId:
+          type: string
+        contentPreview:
+          type: string
+        isRead:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+          nullable: true
+      required:
+        - id
+        - type
+        - actor
+        - postId
+        - commentId
+        - contentPreview
+        - isRead
+        - createdAt
+    UnreadNotificationCountResponseDto:
+      type: object
+      properties:
+        unreadCount:
+          type: number
+      required:
+        - unreadCount
+    ToggleLikeRequestDto:
+      type: object
+      properties:
+        postId:
+          type: string
+      required:
+        - postId
+    ChatParticipantResponseDto:
+      type: object
+      properties:
+        profileId:
+          type: string
+        displayName:
+          type: string
+          nullable: true
+        avatarUrl:
+          type: string
+          nullable: true
+      required:
+        - profileId
+        - displayName
+        - avatarUrl
+    ChatRoomResponseDto:
+      type: object
+      properties:
+        postId:
+          type: string
+        counterpart:
+          $ref: '#/components/schemas/ChatParticipantResponseDto'
+        lastMessageContent:
+          type: string
+        lastMessageAt:
+          type: string
+          format: date-time
+      required:
+        - postId
+        - counterpart
+        - lastMessageContent
+        - lastMessageAt
+    ChatMessageResponseDto:
+      type: object
+      properties:
+        id:
+          type: string
+        postId:
+          type: string
+        ownerProfileId:
+          type: string
+        buyerProfileId:
+          type: string
+        senderProfileId:
+          type: string
+        content:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+          nullable: true
+      required:
+        - id
+        - postId
+        - ownerProfileId
+        - buyerProfileId
+        - senderProfileId
+        - content
+        - createdAt
+    MarkChatAsReadRequestDto:
+      type: object
+      properties:
+        postId:
+          type: string
+        buyerProfileId:
+          type: string
+      required:
+        - postId
+        - buyerProfileId
+    UnreadChatCountResponseDto:
+      type: object
+      properties:
+        unreadRooms:
+          type: number
+      required:
+        - unreadRooms
